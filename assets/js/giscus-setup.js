@@ -9,7 +9,7 @@ function determineGiscusTheme() {
 
   let giscusAttributes = {
     src: "https://giscus.app/client.js",
-    "data-repo": "amysong-robotics/amysong-robotics.github.io",
+    "data-repo": "yuzhen-song/yuzhen-song.github.io",
     "data-repo-id": "",
     "data-category": "Comments",
     "data-category-id": "",
