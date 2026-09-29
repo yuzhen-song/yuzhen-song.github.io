@@ -50,7 +50,7 @@ social: true
 </div>
 
 <div class="about-actions" aria-label="Quick links">
-  <a href="{{ '/assets/pdf/cv.pdf' | relative_url }}" target="_blank" rel="noopener" class="flow-hover-button">Download CV</a>
+  <a href="{{ '/assets/pdf/Yuzhen_Song_s_CV.pdf' | relative_url }}" target="_blank" rel="noopener" class="flow-hover-button">Download CV</a>
   <a href="mailto:yuzhen.song@berkeley.edu" class="flow-hover-button">Email Me</a>
 </div>
 
