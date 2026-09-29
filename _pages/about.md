@@ -24,6 +24,12 @@ social: true
 
 <div class="about-intro">
   <p>
+    Hello! I'm Yuzhen Song. My research focuses on Humanoid Locomotion and Whole-Body Control, Reinforcement Learning,
+    and Sim-to-Real Transfer. I am passionate about advancing embodied intelligence and hope to contribute to building
+    agile, robust, and intelligent humanoid robots for the real world.
+  </p>
+
+  <p>
     I am a senior undergraduate student majoring in Robotics Engineering at
     <a class="about-link" href="https://www.sustech.edu.cn/">Southern University of Science and Technology</a>.
     I work with
