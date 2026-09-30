@@ -12,10 +12,7 @@ profile:
   more_info: >
     <div class="profile-contact-card" style="display: flex; flex-direction: column; align-items: center; margin-top: 0.95rem; color: #20251b; font-family: Inter, Helvetica Neue, Arial, sans-serif; line-height: 1.38; letter-spacing: -0.015em; text-align: center;">
       <div class="profile-contact-name" style="width: 100%; margin-bottom: 0.55rem; color: #20251b; font-size: 1.3rem; font-weight: 500; letter-spacing: -0.02em; text-align: center;">Yuzhen Song</div>
-      <div class="profile-contact-education" style="width: 100%; max-width: 18rem; margin: 0 auto 0.7rem; color: #333; text-align: center; font-size: 0.92rem; line-height: 1.45; letter-spacing: -0.01em;">
-        2023–present, B.E. in Robotics Engineering<br>Southern University of Science and Technology
-      </div>
-      <a class="profile-contact-email" href="mailto:12312836@mail.sustech.edu.cn" style="display: block; width: 100%; color: #20251b; text-align: center; text-decoration: none; overflow-wrap: anywhere; font-size: 0.92rem; letter-spacing: -0.01em;">12312836@mail.sustech.edu.cn</a>
+      <a class="profile-contact-email" href="mailto:yuzhen.song@berkeley.edu" style="display: block; width: 100%; color: #20251b; text-align: center; text-decoration: none; overflow-wrap: anywhere; font-size: 0.92rem; letter-spacing: -0.01em;">yuzhen.song@berkeley.edu</a>
     </div>
 
 selected_papers: false 
@@ -24,8 +21,9 @@ social: true
 
 <div class="about-intro">
   <p>
-    Hello! I'm Yuzhen Song. My research focuses on Humanoid Locomotion and Whole-Body Control, Reinforcement Learning,
-    and Sim-to-Real Transfer. I am passionate about advancing embodied intelligence and hope to contribute to building
+    Hello! I'm <strong>Yuzhen Song</strong>. My research focuses on
+    <strong>Humanoid Locomotion and Whole-Body Control</strong>, <strong>Reinforcement Learning</strong>,
+    and <strong>Sim-to-Real Transfer</strong>. I am <strong>passionate</strong> about advancing embodied intelligence 🤖 and hope to contribute to building
     agile, robust, and intelligent humanoid robots for the real world.
   </p>
 
