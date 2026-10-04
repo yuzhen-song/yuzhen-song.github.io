@@ -20,12 +20,19 @@ social: true
 ---
 
 <div class="about-intro">
-  <p>
+  <p class="about-lead">
     Hello! I'm <strong>Yuzhen Song</strong>. My research focuses on
     <strong>Humanoid Locomotion and Whole-Body Control</strong>, <strong>Reinforcement Learning</strong>,
     and <strong>Sim-to-Real Transfer</strong>. I am <strong>passionate</strong> about advancing embodied intelligence 🤖 and hope to contribute to building
     agile, robust, and intelligent humanoid robots for the real world.
   </p>
+
+  <div class="research-tags" aria-label="Research interests">
+    <span>Humanoid Locomotion</span>
+    <span>Whole-Body Control</span>
+    <span>Reinforcement Learning</span>
+    <span>Sim-to-Real Transfer</span>
+  </div>
 
   <p>
     I am a senior undergraduate student majoring in Robotics Engineering at
@@ -106,6 +113,29 @@ social: true
 
 .about-intro {
   margin-bottom: 2.3rem;
+}
+
+.about-lead {
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.4rem;
+}
+
+.research-tags span {
+  border: 1px solid rgba(143, 177, 98, 0.45);
+  border-radius: 999px;
+  background: rgba(143, 177, 98, 0.12);
+  padding: 0.28rem 0.8rem;
+  color: #3c4a33;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .about-intro p {
