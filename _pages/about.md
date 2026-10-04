@@ -19,15 +19,35 @@ selected_papers: false
 social: true
 ---
 
-<div class="about-intro">
-  <p>
-    Hello! I'm <strong>Yuzhen Song</strong>. My research focuses on
+<section class="hero" data-reveal>
+  <p class="hero-eyebrow">Humanoid Robotics · Embodied Intelligence</p>
+  <h1 class="hero-title">Building agile humanoids<br>that survive the real world.</h1>
+  <p class="hero-lede">
+    Hello! I'm <strong>Yuzhen Song</strong> 🤖 — I work on
     <strong>Humanoid Locomotion and Whole-Body Control</strong>, <strong>Reinforcement Learning</strong>,
-    and <strong>Sim-to-Real Transfer</strong>. I am <strong>passionate</strong> about advancing embodied intelligence 🤖 and hope to contribute to building
-    agile, robust, and intelligent humanoid robots for the real world.
+    and <strong>Sim-to-Real Transfer</strong>, with one goal: robots that walk out of simulation and into real life.
   </p>
+  <div class="research-tags" aria-label="Research interests">
+    <span>Humanoid Locomotion</span>
+    <span>Whole-Body Control</span>
+    <span>Reinforcement Learning</span>
+    <span>Sim-to-Real Transfer</span>
+  </div>
+  <div class="hero-cta">
+    <a href="{{ '/assets/pdf/cv.pdf' | relative_url }}" target="_blank" rel="noopener" class="hero-btn primary">Download CV</a>
+    <a href="{{ '/projects/' | relative_url }}" class="hero-btn">View Projects →</a>
+    <a href="mailto:yuzhen.song@berkeley.edu" class="hero-btn ghost">Email Me</a>
+  </div>
+  <dl class="hero-meta">
+    <div><dt>Now</dt><dd>Senior undergrad, Robotics @ SUSTech</dd></div>
+    <div><dt>Lab</dt><dd>HAR Lab · Prof. Chenglong Fu</dd></div>
+    <div><dt>Also</dt><dd>UC Berkeley MSC Lab collaboration</dd></div>
+    <div><dt>Next</dt><dd>2027 Fall PhD applicant</dd></div>
+  </dl>
+</section>
 
-  <p>
+<div class="about-intro">
+  <p data-reveal>
     I am a senior undergraduate student majoring in Robotics Engineering at
     <a class="about-link" href="https://www.sustech.edu.cn/">Southern University of Science and Technology</a>.
     I work with
@@ -36,7 +56,7 @@ social: true
     <a class="about-link" href="https://www.harlab.site/">Human Augmentation and Rehabilitation Laboratory (HAR Lab)</a>.
   </p>
 
-  <p>
+  <p data-reveal>
     I am also involved in a UC Berkeley collaboration with the
     <a class="about-link" href="https://msc.berkeley.edu/">Mechanical Systems Control Laboratory (MSC Lab)</a>,
     directed by
@@ -48,15 +68,31 @@ social: true
 
 <hr class="about-divider">
 
-<div class="about-phd">
+<div class="about-phd" data-reveal>
   <h3>Applying for 2027 Fall PhD Programs</h3>
-  <p>I am currently applying for PhD programs starting in Fall 2027.</p>
+  <p>I am currently applying for PhD programs starting in Fall 2027. Feel free to reach out for collaborations or research opportunities.</p>
 </div>
 
 <div class="about-actions" aria-label="Quick links">
   <a href="{{ '/assets/pdf/cv.pdf' | relative_url }}" target="_blank" rel="noopener" class="flow-hover-button">Download CV</a>
   <a href="mailto:yuzhen.song@berkeley.edu" class="flow-hover-button">Email Me</a>
 </div>
+
+<script>
+(function () {
+  var els = document.querySelectorAll('[data-reveal]');
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
 
 <style>
 .profile-contact-card {
@@ -106,6 +142,146 @@ social: true
 
 .about-intro {
   margin-bottom: 2.3rem;
+}
+
+.hero {
+  margin: 0.5rem 0 2rem;
+  padding: 1.75rem 1.75rem 1.5rem;
+  border: 1px solid rgba(143, 177, 98, 0.28);
+  border-radius: 22px;
+  background:
+    radial-gradient(1200px 300px at 10% -10%, rgba(143, 177, 98, 0.18), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(248, 250, 244, 0.6));
+  box-shadow: 0 18px 45px rgba(48, 55, 44, 0.08);
+}
+
+.hero-eyebrow {
+  margin-bottom: 0.6rem;
+  color: #6d8a52;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  margin-bottom: 0.9rem;
+  color: #20251b;
+  font-size: clamp(2rem, 4.5vw, 3.1rem);
+  font-weight: 850;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.hero-lede {
+  max-width: 44rem;
+  font-size: 1.06rem;
+  line-height: 1.85;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.1rem 0 1.25rem;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #cbd5c0;
+  border-radius: 999px;
+  background: #f0f4ec;
+  padding: 0.55rem 1.1rem;
+  color: #30372c !important;
+  font-size: 0.82rem;
+  font-weight: 750;
+  text-decoration: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(48, 55, 44, 0.14);
+}
+
+.hero-btn.primary {
+  border-color: #30372c;
+  background: #30372c;
+  color: #f7faf4 !important;
+}
+
+.hero-btn.ghost {
+  background: transparent;
+}
+
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.hero-meta div {
+  border-top: 1px solid rgba(143, 177, 98, 0.3);
+  padding-top: 0.55rem;
+}
+
+.hero-meta dt {
+  color: #6d8a52;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-meta dd {
+  margin: 0.15rem 0 0;
+  color: #30372c;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.about-lead {
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.4rem;
+}
+
+.research-tags span {
+  border: 1px solid rgba(143, 177, 98, 0.45);
+  border-radius: 999px;
+  background: rgba(143, 177, 98, 0.12);
+  padding: 0.28rem 0.8rem;
+  color: #3c4a33;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .about-intro p {
