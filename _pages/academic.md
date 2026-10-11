@@ -1,8 +1,7 @@
 ---
 layout: page
-title: Academic
+title: Publication
 permalink: /academic/
-description: Selected academic work.
 nav: true
 nav_order: 3
 ---
@@ -39,6 +38,7 @@ nav_order: 3
         <a href="https://huggingface.co/datasets/JianuoCao/TEXEDO" target="_blank" rel="noopener noreferrer">dataset</a>
       </p>
     </div>
+
   </article>
 </div>
 
