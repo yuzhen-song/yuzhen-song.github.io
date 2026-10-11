@@ -17,7 +17,8 @@ the arrow with a white-edged black I-beam and keep the same cat pixels and posit
 Review background removal
 if your original has black artwork rather than the supplied dark brown outline.
 
-- **Size:** Change `CANVAS_SIZE`, `CAT_WIDTH`, `CAT_LEFT`, and `CAT_TOP` in
+- **Size:** The cat's maximum width is 42px (previously 48px), with the same
+  arrow/I-beam size and hotspots. Change `CANVAS_SIZE`, `CAT_WIDTH`, `CAT_LEFT`, and `CAT_TOP` in
   `_scripts/prepare_cat_cursors.py`, then regenerate. Keep the canvas at 64px or
   smaller for compatibility. CSS does not resize native PNG cursors.
 - **Hotspot:** The arrow tip is `(1, 1)`. If moving it, update `ARROW_TIP` and the
