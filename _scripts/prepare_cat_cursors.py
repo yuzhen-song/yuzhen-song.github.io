@@ -10,7 +10,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 
 CANVAS_SIZE = 64
-CAT_WIDTH = 48
+CAT_WIDTH = 42
 CAT_LEFT = 15
 CAT_TOP = 17
 ARROW_TIP = (1, 1)

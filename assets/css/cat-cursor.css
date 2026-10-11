@@ -4,14 +4,14 @@
 /* All images share a 64px canvas. Arrows use (1, 1); I-beams use (5, 8). */
 @media (any-hover: hover) and (any-pointer: fine) {
   html.cat-cursor-ready {
-    --cat-cursor-arched-image: url("{{ '/assets/cursors/cat-arched.png' | relative_url }}") 1 1;
-    --cat-cursor-image: url("{{ '/assets/cursors/cat-sleeping.png' | relative_url }}") 1 1;
-    --cat-text-cursor-image: url("{{ '/assets/cursors/cat-sleeping-text.png' | relative_url }}") 5 8;
+    --cat-cursor-arched-image: url("{{ '/assets/cursors/cat-arched.png' | relative_url | bust_file_cache }}") 1 1;
+    --cat-cursor-image: url("{{ '/assets/cursors/cat-sleeping.png' | relative_url | bust_file_cache }}") 1 1;
+    --cat-text-cursor-image: url("{{ '/assets/cursors/cat-sleeping-text.png' | relative_url | bust_file_cache }}") 5 8;
   }
 
   html.cat-cursor-ready.cat-cursor-pressed {
     --cat-cursor-image: var(--cat-cursor-arched-image);
-    --cat-text-cursor-image: url("{{ '/assets/cursors/cat-arched-text.png' | relative_url }}") 5 8;
+    --cat-text-cursor-image: url("{{ '/assets/cursors/cat-arched-text.png' | relative_url | bust_file_cache }}") 5 8;
   }
 
   html.cat-cursor-ready,
