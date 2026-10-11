@@ -1,4 +1,4 @@
-"""Compose the user's original pixel-art cats with a fixed classic arrow.
+"""Compose the user's original pixel-art cats with a fixed arrow or I-beam.
 
 Usage: python _scripts/prepare_cat_cursors.py sleeping.png arched.png
 Requires Pillow. No drawing or recoloring is applied to the cat illustrations.
@@ -14,6 +14,7 @@ CAT_WIDTH = 48
 CAT_LEFT = 15
 CAT_TOP = 17
 ARROW_TIP = (1, 1)
+TEXT_HOTSPOT = (5, 8)
 OUTPUT = Path(__file__).resolve().parents[1] / "assets" / "cursors"
 
 
@@ -56,6 +57,7 @@ def main():
                           max(1, round(cat.height * scale))), Image.Resampling.NEAREST)
         canvas = Image.new("RGBA", (CANVAS_SIZE, CANVAS_SIZE))
         canvas.alpha_composite(cat, (CAT_LEFT, CAT_TOP))
+        text_canvas = canvas.copy()
         # 15px-tall white arrow, 1px black outline; identical in both states.
         ImageDraw.Draw(canvas).polygon(
             [ARROW_TIP, (1, 13), (4, 10), (7, 15), (9, 14), (6, 9), (11, 9)],
@@ -63,6 +65,18 @@ def main():
         )
         destination = OUTPUT / f"cat-{name}.png"
         canvas.save(destination, optimize=True)
+        print(f"{destination}: {destination.stat().st_size} bytes")
+        # White-edged black I-beam remains visible on light and dark backgrounds.
+        # Its selection hotspot is the center, rather than the arrow's tip.
+        text_draw = ImageDraw.Draw(text_canvas)
+        text_x, text_y = TEXT_HOTSPOT
+        text_draw.rectangle((text_x - 1, text_y - 7, text_x + 1, text_y + 7), fill="white")
+        for cap_y in (text_y - 6, text_y + 6):
+            text_draw.rectangle((text_x - 4, cap_y - 1, text_x + 4, cap_y + 1), fill="white")
+            text_draw.line((text_x - 3, cap_y, text_x + 3, cap_y), fill="black")
+        text_draw.line((text_x, text_y - 6, text_x, text_y + 6), fill="black")
+        destination = OUTPUT / f"cat-{name}-text.png"
+        text_canvas.save(destination, optimize=True)
         print(f"{destination}: {destination.stat().st_size} bytes")
 
 

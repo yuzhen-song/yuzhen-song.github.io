@@ -1,14 +1,17 @@
 ---
 ---
 
-/* Both images share a 64px canvas and an arrow-tip hotspot at (1, 1). */
+/* All images share a 64px canvas. Arrows use (1, 1); I-beams use (5, 8). */
 @media (any-hover: hover) and (any-pointer: fine) {
   html.cat-cursor-ready {
+    --cat-cursor-arched-image: url("{{ '/assets/cursors/cat-arched.png' | relative_url }}") 1 1;
     --cat-cursor-image: url("{{ '/assets/cursors/cat-sleeping.png' | relative_url }}") 1 1;
+    --cat-text-cursor-image: url("{{ '/assets/cursors/cat-sleeping-text.png' | relative_url }}") 5 8;
   }
 
   html.cat-cursor-ready.cat-cursor-pressed {
-    --cat-cursor-image: url("{{ '/assets/cursors/cat-arched.png' | relative_url }}") 1 1;
+    --cat-cursor-image: var(--cat-cursor-arched-image);
+    --cat-text-cursor-image: url("{{ '/assets/cursors/cat-arched-text.png' | relative_url }}") 5 8;
   }
 
   html.cat-cursor-ready,
@@ -35,10 +38,11 @@
     cursor: var(--cat-cursor-image), pointer;
   }
 
-  /* Keep editing, text selection and browser-provided textarea resizing usable. */
+  /* A cat companion with an I-beam at its center keeps selection/editing precise. */
   html.cat-cursor-ready
     :is(
       p,
+      li,
       h1,
       h2,
       h3,
@@ -62,9 +66,16 @@
       input[type="url"],
       input[type="number"],
       [contenteditable=""],
-      [contenteditable="true"]
+      [contenteditable="true"],
+      [contenteditable="plaintext-only"]
     ) {
-    cursor: text;
+    cursor: var(--cat-text-cursor-image), text;
+  }
+
+  /* Hover alone wakes the cat, including link children with their own text cursor. */
+  html.cat-cursor-ready :is(a[href], button, summary, [role="button"], .btn, .navbar-toggler):hover {
+    --cat-cursor-image: var(--cat-cursor-arched-image);
+    --cat-text-cursor-image: var(--cat-cursor-arched-image);
   }
 
   html.cat-cursor-ready :is(button:disabled, input:disabled, select:disabled, textarea:disabled, [aria-disabled="true"]) {

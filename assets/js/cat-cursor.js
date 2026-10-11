@@ -18,7 +18,7 @@
     root.classList.toggle("cat-cursor-ready", ready && capability.matches);
   };
 
-  // Decode both tiny assets before enabling the cursor so the first press is immediate.
+  // Decode every state before enabling the cursor so hover/press switching is immediate.
   const preload = (url) =>
     new Promise((resolve, reject) => {
       const image = new Image();
@@ -30,7 +30,7 @@
       image.src = url;
     });
 
-  Promise.all([preload(script.dataset.sleeping), preload(script.dataset.arched)])
+  Promise.all([script.dataset.sleeping, script.dataset.arched, script.dataset.sleepingText, script.dataset.archedText].map(preload))
     .then(() => {
       ready = true;
       updateCapability();
