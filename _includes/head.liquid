@@ -76,6 +76,13 @@
   <link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url | bust_file_cache}}">
 {% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
+<link rel="stylesheet" href="{{ '/assets/css/cat-cursor.css' | relative_url }}">
+<script
+  defer
+  src="{{ '/assets/js/cat-cursor.js' | relative_url }}"
+  data-sleeping="{{ '/assets/cursors/cat-sleeping.png' | relative_url }}"
+  data-arched="{{ '/assets/cursors/cat-arched.png' | relative_url }}"
+></script>
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
 {% if site.enable_darkmode %}

@@ -1,0 +1,73 @@
+---
+---
+
+/* Both images share a 64px canvas and an arrow-tip hotspot at (1, 1). */
+@media (any-hover: hover) and (any-pointer: fine) {
+  html.cat-cursor-ready {
+    --cat-cursor-image: url("{{ '/assets/cursors/cat-sleeping.png' | relative_url }}") 1 1;
+  }
+
+  html.cat-cursor-ready.cat-cursor-pressed {
+    --cat-cursor-image: url("{{ '/assets/cursors/cat-arched.png' | relative_url }}") 1 1;
+  }
+
+  html.cat-cursor-ready,
+  html.cat-cursor-ready body {
+    cursor: var(--cat-cursor-image), auto;
+  }
+
+  html.cat-cursor-ready
+    :is(
+      a[href],
+      button,
+      summary,
+      [role="button"],
+      select,
+      label[for],
+      .btn,
+      .navbar-toggler,
+      input[type="button"],
+      input[type="submit"],
+      input[type="reset"],
+      input[type="checkbox"],
+      input[type="radio"]
+    ) {
+    cursor: var(--cat-cursor-image), pointer;
+  }
+
+  /* Keep editing, text selection and browser-provided textarea resizing usable. */
+  html.cat-cursor-ready
+    :is(
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      pre,
+      code,
+      blockquote,
+      dt,
+      dd,
+      td,
+      th,
+      textarea,
+      input:not([type]),
+      input[type="text"],
+      input[type="search"],
+      input[type="email"],
+      input[type="password"],
+      input[type="tel"],
+      input[type="url"],
+      input[type="number"],
+      [contenteditable=""],
+      [contenteditable="true"]
+    ) {
+    cursor: text;
+  }
+
+  html.cat-cursor-ready :is(button:disabled, input:disabled, select:disabled, textarea:disabled, [aria-disabled="true"]) {
+    cursor: not-allowed;
+  }
+}
