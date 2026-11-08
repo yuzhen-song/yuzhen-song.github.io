@@ -18,7 +18,7 @@ display_categories: [Research Projects, Course Projects, Competitions]
         {% assign categorized_projects = site.projects | where: "category", category %}
         {% assign visible_projects = "" | split: "" %}
         {% for project in categorized_projects %}
-          {% unless project.title == "Autonomous UAV Mission Navigation" or project.title == "Replicating DDAT: Diffusion Policies for Robot Trajectories" %}
+          {% unless project.title == "Autonomous UAV Mission Navigation" or project.title == "Replicating DDAT: Diffusion Policies for Robot Trajectories" or project.title == "Slope CoM Assistance System" %}
             {% assign visible_projects = visible_projects | push: project %}
           {% endunless %}
         {% endfor %}

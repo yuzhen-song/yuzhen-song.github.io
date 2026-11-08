@@ -1,4 +1,4 @@
-{% assign selected_slugs = '3_project,8_project,4_project,6_project' | split: ',' %}
+{% assign selected_slugs = '3_project,4_project,6_project' | split: ',' %}
 <div class="home-project-list">
   {% for slug in selected_slugs %}
     {% assign project = site.projects | where: 'slug', slug | first %}
