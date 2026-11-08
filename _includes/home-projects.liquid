@@ -1,0 +1,19 @@
+{% assign selected_slugs = '3_project,8_project,4_project,6_project' | split: ',' %}
+<div class="home-project-list">
+  {% for slug in selected_slugs %}
+    {% assign project = site.projects | where: 'slug', slug | first %}
+    {% if project %}
+      <article class="home-project-item">
+        <a class="home-project-image" href="{{ project.url | relative_url }}">
+          <img src="{{ project.img | relative_url }}" alt="{{ project.title | escape }}" loading="lazy">
+        </a>
+        <div>
+          <h3>
+            <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+          </h3>
+          <p>{{ project.description }}</p>
+        </div>
+      </article>
+    {% endif %}
+  {% endfor %}
+</div>

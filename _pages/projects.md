@@ -5,6 +5,8 @@ permalink: /projects/
 description: My Robotics Projects！🤖
 nav: true
 nav_order: 4
+nav_title: Selected Projects
+home_section: selected-projects
 display_categories: [Research Projects, Course Projects, Competitions]
 ---
 
@@ -21,7 +23,7 @@ display_categories: [Research Projects, Course Projects, Competitions]
           {% endunless %}
         {% endfor %}
         {% assign sorted_projects = visible_projects | sort: "importance" | uniq %}
-        
+
         {% for project in sorted_projects %}
         {% assign project_href = project.url | relative_url %}
         {% if project.redirect %}
@@ -34,14 +36,14 @@ display_categories: [Research Projects, Course Projects, Competitions]
               <img src="{% if project.title == 'BEAT: Posture-Independent Wrist Blood Pressure Monitor' %}{{ '/assets/img/pressure_with_different_postures-cover.png' | relative_url }}{% else %}{{ project.img | relative_url }}{% endif %}" alt="project thumbnail">
             </a>
           </div>
-          
+
           <!-- 右侧：文字内容 -->
           <div class="paper-info">
             <h3 class="paper-title">
               <a href="{{ project_href }}">{{ project.title }}</a>
             </h3>
             <p class="paper-description">{{ project.description }}</p>
-            
+
             {% if project.links %}
             <div class="paper-links">
               {% for link in project.links %}
@@ -55,7 +57,7 @@ display_categories: [Research Projects, Course Projects, Competitions]
 
       </div>
     {% endfor %}
-  {% endif %}
+{% endif %}
 </div>
 
 <style>

@@ -51,6 +51,20 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    {% if page.home_sections %}
+      <section id="publication" class="home-section" aria-labelledby="publication-title">
+        <h2 id="publication-title">Publication</h2>
+        {% include home-publications.liquid %}
+      </section>
+      <section id="selected-projects" class="home-section" aria-labelledby="selected-projects-title">
+        <div class="home-section-heading">
+          <h2 id="selected-projects-title">Selected Projects</h2>
+          <a class="flow-hover-button" href="{{ '/projects/' | relative_url }}">View All</a>
+        </div>
+        {% include home-projects.liquid %}
+      </section>
+    {% endif %}
+
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>

@@ -100,7 +100,9 @@
               {% else %}
                 {% assign parent_link = p.permalink | remove: 'index.html' %}
                 <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
-                  {%- if p.permalink contains '://' -%}
+                  {%- if p.home_section -%}
+                    {%- assign url = '/' | append: '#' | append: p.home_section -%}
+                  {%- elsif p.permalink contains '://' -%}
                     {%- assign url = p.permalink -%}
                   {%- elsif p.permalink contains '/blog/' -%}
                     {%- assign url = '/blog/' -%}
@@ -108,7 +110,7 @@
                     {%- assign url = p.url -%}
                   {%- endif %}
                   <a class="nav-link" href="{{ url | relative_url }}">
-                    {{- p.title }}
+                    {{- p.nav_title | default: p.title }}
                     {% if page.url contains p.url %}
                       <span class="sr-only">(current)</span>
                     {% endif %}
@@ -117,6 +119,9 @@
               {% endif %}
             {% endif %}
           {% endfor %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ '/assets/pdf/cv.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">CV</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="https://github.com/yuzhen-song" target="_blank" rel="noopener noreferrer">GitHub</a>
           </li>

@@ -2,8 +2,8 @@
 layout: about
 title: About
 permalink: /
-nav: false            
-nav_order: 1         
+nav: false
+nav_order: 1
 
 profile:
   align: right
@@ -15,8 +15,9 @@ profile:
       <a class="profile-contact-email" href="mailto:yuzhen.song@berkeley.edu" style="display: block; width: 100%; color: #20251b; text-align: center; text-decoration: none; overflow-wrap: anywhere; font-size: 0.92rem; letter-spacing: -0.01em;">yuzhen.song@berkeley.edu</a>
     </div>
 
-selected_papers: false 
-social: true
+selected_papers: false
+social: false
+home_sections: true
 ---
 
 <div class="about-intro">
@@ -44,21 +45,75 @@ social: true
     at
     <a class="about-link" href="https://www.berkeley.edu/">University of California, Berkeley</a>.
   </p>
-</div>
-
-<hr class="about-divider">
-
-<div class="about-phd">
-  <h3>Applying for 2027 Fall PhD Programs</h3>
-  <p>I am currently applying for PhD programs starting in Fall 2027.</p>
-</div>
-
-<div class="about-actions" aria-label="Quick links">
-  <a href="{{ '/assets/pdf/cv.pdf' | relative_url }}" target="_blank" rel="noopener" class="flow-hover-button">Download CV</a>
-  <a href="mailto:yuzhen.song@berkeley.edu" class="flow-hover-button">Email Me</a>
+  <p>I am currently applying for PhD programs starting in <strong>Fall 2027</strong>.</p>
 </div>
 
 <style>
+.home-section {
+  clear: both;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(143, 177, 98, 0.25);
+  scroll-margin-top: 6rem;
+}
+
+.home-section h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.home-section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-section-heading h2 {
+  margin-bottom: 0;
+}
+
+.home-project-item {
+  display: grid;
+  grid-template-columns: minmax(260px, 34%) 1fr;
+  gap: 1.75rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.home-project-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: #f5f5f1;
+  border: 1px solid rgba(143, 177, 98, 0.2);
+  border-radius: 8px;
+}
+
+.home-project-item h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.home-project-item h3 a {
+  color: #8fb162;
+}
+
+.home-project-item p {
+  line-height: 1.65;
+}
+
+@media (max-width: 700px) {
+  .home-project-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
 .profile-contact-card {
   display: flex;
   flex-direction: column;
@@ -119,33 +174,6 @@ social: true
   text-decoration: underline !important;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 2px;
-}
-
-.about-divider {
-  margin: 2.2rem 0 2rem;
-  border: 0;
-  border-top: 1px solid rgba(143, 177, 98, 0.25);
-}
-
-.about-phd {
-  margin-bottom: 1.2rem;
-}
-
-.about-phd h3 {
-  margin-bottom: 0.7rem;
-  font-size: 1.6rem;
-  font-weight: 800;
-}
-
-.about-phd p {
-  line-height: 1.8;
-}
-
-.about-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
 }
 
 .flow-hover-button {
@@ -213,8 +241,6 @@ social: true
     margin-bottom: 1.8rem;
   }
 
-  .about-divider {
-    margin: 1.8rem 0 1.6rem;
-  }
+
 }
 </style>
