@@ -237,7 +237,7 @@ home_sections: true
   margin-left: auto;
   padding: 0.25rem 0;
   color: #60764c;
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-family: inherit;
   font-size: 0.88rem;
   font-weight: 500;
   letter-spacing: 0;
