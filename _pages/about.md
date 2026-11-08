@@ -66,7 +66,7 @@ home_sections: true
 .home-section-heading {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1.5rem;
@@ -229,63 +229,63 @@ home_sections: true
   text-underline-offset: 2px;
 }
 
-.flow-hover-button {
-  position: relative;
-  z-index: 0;
+.projects-view-all {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  min-width: 7.5rem;
-  overflow: hidden;
-  border: 1px solid #cbd5c0;
-  border-radius: 0.375rem;
-  background: #f0f4ec;
-  padding: 0.55rem 1rem;
-  color: #30372c !important;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  line-height: 1.25;
+  gap: 0.45rem;
+  min-height: 44px;
+  margin-left: auto;
+  padding: 0.25rem 0;
+  color: #60764c;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.5;
+  white-space: nowrap;
   text-decoration: none !important;
-  transition: transform 0.5s ease, color 0.5s ease;
+  transition: color 180ms ease;
 }
 
-.flow-hover-button::before {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  border-radius: 100%;
-  background: #30372c;
-  content: "";
-  transform: translate(150%, 150%) scale(2.5);
-  transition: transform 1s ease;
+.projects-view-all span {
+  border-bottom: 1px solid transparent;
+  transition: border-color 180ms ease;
 }
 
-.flow-hover-button:hover,
-.flow-hover-button:focus-visible {
-  color: #f7faF4 !important;
-  transform: scale(1.05);
+.projects-view-all svg {
+  flex: none;
+  transition: transform 180ms ease;
 }
 
-.flow-hover-button:hover::before,
-.flow-hover-button:focus-visible::before {
-  transform: translate(0, 0) scale(2.5);
+.projects-view-all:hover,
+.projects-view-all:focus-visible {
+  color: #435b30;
 }
 
-.flow-hover-button:active {
-  transform: scale(0.95);
+.projects-view-all:hover span,
+.projects-view-all:focus-visible span {
+  border-bottom-color: currentColor;
 }
 
-.flow-hover-button span {
-  position: relative;
-  z-index: 1;
+.projects-view-all:hover svg {
+  transform: translateX(3px);
+}
+
+.projects-view-all:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .flow-hover-button,
-  .flow-hover-button::before {
-    transition-duration: 0.01ms;
+  .projects-view-all,
+  .projects-view-all span,
+  .projects-view-all svg {
+    transition: none;
+  }
+
+  .projects-view-all:hover svg {
+    transform: none;
   }
 }
 
