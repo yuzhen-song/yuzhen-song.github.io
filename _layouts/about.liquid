@@ -101,5 +101,12 @@ layout: default
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
     {% endif %}
+
+    {% if page.home_sections %}
+      <section id="education" class="home-section" aria-labelledby="education-title">
+        <h2 id="education-title">Education</h2>
+        {% include home-education.liquid %}
+      </section>
+    {% endif %}
   </article>
 </div>

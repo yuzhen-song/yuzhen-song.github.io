@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Sim-to-Real Dexterous Hand
-description: Simulation infrastructure for a multi-fingered robotic palm in Webots and Isaac Sim.
+title: Underactuated Metamorphic Palm Simulation
+description: Modeling a closed-loop, five-link palm for a three-fingered hand in Isaac Sim and Webots, with loop-closure constraints, mesh optimization, and reconfiguration stability analysis.
 img: assets/img/webots.gif
 importance: 3
 category: Research Projects
 ---
 
-In this project, I established robust simulation environments to support future Reinforcement Learning (RL) research on a multi-fingered robotic palm.
+I built Isaac Sim and Webots environments for an underactuated metamorphic palm with a closed-loop five-link mechanism for a three-fingered hand. My work focused on modeling loop-closure constraints, simplifying meshes to enable simulation on an 8 GB GPU, and investigating instability during palm reconfiguration in preparation for preliminary reinforcement learning experiments.
 
 ### Simulation Demos
 
@@ -17,7 +17,7 @@ In this project, I established robust simulation environments to support future 
     </div>
 </div>
 <div class="caption">
-    Closed-loop simulation of the robotic palm in <b>NVIDIA Isaac Sim</b>.
+    Simulation of the metamorphic palm's closed-loop mechanism in <b>NVIDIA Isaac Sim</b>.
 </div>
 
 <div class="row">
@@ -26,11 +26,11 @@ In this project, I established robust simulation environments to support future 
     </div>
 </div>
 <div class="caption">
-    Closed-loop simulation of the robotic palm in <b>Webots</b>.
+    Simulation of the metamorphic palm's closed-loop mechanism in <b>Webots</b>.
 </div>
 
 ### Work Done
 
-- **URDF Refinement:** Optimized the URDF model's collision geometries and kinematic constraints to ensure physical accuracy.
-- **Environment Setup:** Configured physics parameters (e.g., friction, joint limits) in both Isaac Sim and Webots.
-- **Foundational Pipeline:** Established a simulation-to-training pipeline for future RL grasping policies.
+- **Closed-Loop Modeling:** Added loop-closure constraints to the URDF models and built Isaac Sim and Webots environments for preliminary reinforcement learning experiments.
+- **Mesh Optimization:** Simplified meshes while preserving geometry at contact regions, resolving GPU memory failures and enabling simulation on an 8 GB GPU.
+- **Reconfiguration Stability:** Analyzed joint constraints and tuned damping, stiffness, and friction to investigate instability during palm reconfiguration and identify limitations in simulation fidelity.

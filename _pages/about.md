@@ -107,10 +107,63 @@ home_sections: true
   line-height: 1.65;
 }
 
+.home-education-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.home-education-item {
+  display: grid;
+  grid-template-columns: 108px minmax(0, 1fr);
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.home-education-logo {
+  width: 108px;
+  height: 108px;
+  object-fit: contain;
+}
+
+.home-education-info h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.home-education-info p {
+  margin: 0 0 0.2rem;
+  line-height: 1.6;
+}
+
+.home-education-info .home-education-dates {
+  margin: 0.4rem 0 0;
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+}
+
 @media (max-width: 700px) {
   .home-project-item {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .home-education-item {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .home-education-logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .home-education-info h3 {
+    font-size: 1.05rem;
   }
 }
 
