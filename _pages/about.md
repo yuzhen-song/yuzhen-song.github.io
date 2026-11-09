@@ -23,8 +23,8 @@ home_sections: true
 <div class="about-intro">
   <p>
     Hello! I'm <strong>Yuzhen Song</strong>. My research focuses on
-    <strong>Humanoid Locomotion and Whole-Body Control</strong>, <strong>Reinforcement Learning</strong>,
-    and <strong>Sim-to-Real Transfer</strong>. I am <strong>passionate</strong> about advancing embodied intelligence 🤖 and hope to contribute to building
+    <strong>Humanoid Robotics</strong>, <strong>Dexterous Manipulation</strong>,
+    and <strong>Robot Learning</strong>. I am <strong>passionate</strong> about advancing embodied intelligence 🤖 and hope to contribute to building
     agile, robust, and intelligent humanoid robots for the real world.
   </p>
 
