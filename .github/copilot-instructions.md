@@ -2,7 +2,7 @@
 
 ## Personal site layout (current)
 
-The site source is `site/`, configured by `site/_config.yml`. Use `bundle exec jekyll build --config site/_config.yml` from the repository root. Docker configuration and optional Python dependencies live in `tools/`. Build output remains `_site/`.
+The site source is `site/`, configured by `site/_config.yml`. Use `bash scripts/build.sh` from the repository root. Docker configuration and optional Python dependencies live in `tools/`. The build script enters `site/` so theme plugins can resolve source-relative files. Build output remains `_site/` at the repository root.
 
 This repository is Yuzhen Song's customized portfolio. Start with the root README for the current directory map. The sections below describe the upstream theme and optional features; template posts, books, teaching examples, and sample assets have been removed.
 
@@ -87,7 +87,7 @@ docker compose -f tools/compose-slim.yml up
 ```bash
 bundle install                         # Install Ruby gems
 pip install jupyter                    # Install Python dependencies
-bundle exec jekyll serve --config site/_config.yml --port 4000   # Run at http://localhost:4000
+cd site && bundle exec jekyll serve --port 4000   # Run at http://localhost:4000
 ```
 
 ### Important Build Requirements
@@ -138,7 +138,7 @@ When making changes:
 - **deploy.yml** – Main deployment workflow (runs on push/PR to main/master)
   - Sets up Ruby 3.3.5, Python 3.13
   - Installs imagemagick, nbconvert
-  - Runs `bundle exec jekyll build --config site/_config.yml` with JEKYLL_ENV=production
+  - Runs `bash scripts/build.sh` with JEKYLL_ENV=production
   - Runs purgecss for CSS optimization
   - Commits built site to gh-pages branch
   - **Triggers on:** Changes to site files, assets, config (NOT documentation files alone)
@@ -177,7 +177,7 @@ docker compose -f tools/compose.yml pull && docker compose -f tools/compose.yml 
 
 ```bash
 docker compose -f tools/compose.yml up --build
-bundle exec jekyll build --config site/_config.yml
+bash scripts/build.sh
 # Check for errors in output
 ```
 
@@ -187,7 +187,7 @@ bundle exec jekyll build --config site/_config.yml
 
 - **Problem:** Special characters (`:`, `&`, `#`) in values cause parse errors
 - **Solution:** Quote string values: `title: "My: Cool Site"`
-- **Debug:** Run locally to see detailed error: `bundle exec jekyll build --config site/_config.yml`
+- **Debug:** Run locally to see detailed error: `bash scripts/build.sh`
 
 ### "Unknown tag 'toc'" Error on Deployment
 

@@ -1,5 +1,5 @@
-source: site
-destination: _site
+source: .
+destination: ../_site
 lang: en
 # -----------------------------------------------------------------------------
 # Site settings

@@ -64,7 +64,7 @@ al-folio auto-generates a `sitemap.xml` and `robots.txt` for you. These tell sea
 If they're missing:
 
 1. Check `_config.yml` has a valid `url`
-2. Rebuild: `bundle exec jekyll build --config site/_config.yml`
+2. Rebuild: `bash scripts/build.sh`
 3. Check `_site/` directory has both files
 
 **No configuration needed** – al-folio handles this automatically.

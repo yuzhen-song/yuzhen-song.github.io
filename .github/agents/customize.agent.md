@@ -133,7 +133,7 @@ docker compose -f tools/compose.yml up
 
 # Legacy method (requires Ruby, Bundler, Python)
 bundle install
-bundle exec jekyll serve --config site/_config.yml
+cd site && bundle exec jekyll serve
 # Site available at http://localhost:4000
 ```
 
@@ -146,7 +146,7 @@ docker compose -f tools/compose.yml up --build
 # Output automatically served at http://localhost:8080
 
 # Legacy method (requires Ruby, Bundler)
-bundle exec jekyll build --config site/_config.yml
+bash scripts/build.sh
 # Output in _site/ directory
 
 # Deploy happens automatically via GitHub Actions on push to main branch

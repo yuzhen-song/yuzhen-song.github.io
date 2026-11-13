@@ -148,7 +148,7 @@ The configuration file [\_config.yml](../../site/_config.yml) contains the main 
 
 > Note that the `url` and `baseurl` settings are used to generate the links of the website, as explained in the [install instructions](INSTALL.md).
 
-All changes made to this file are only visible after you rebuild the website. That means that you need to run `bundle exec jekyll serve --config site/_config.yml` again if you are running the website locally or push your changes to GitHub if you are using GitHub Pages. All other changes are visible immediately, you only need to refresh the page.
+All changes made to this file are only visible after you rebuild the website. That means that you need to run `cd site && bundle exec jekyll serve` again if you are running the website locally or push your changes to GitHub if you are using GitHub Pages. All other changes are visible immediately, you only need to refresh the page.
 
 If changes don't appear after refreshing, try:
 
@@ -882,7 +882,7 @@ To enable social media previews:
    ```bash
    docker compose -f tools/compose.yml down && docker compose -f tools/compose.yml up
    # or
-   bundle exec jekyll serve --config site/_config.yml
+   cd site && bundle exec jekyll serve
    ```
 
 Once enabled, all your site's pages will automatically include Open Graph meta tags in the HTML head element.
@@ -1294,7 +1294,7 @@ In this folder you need to store your file in the same format as you would in `_
    ```bash
    docker compose -f tools/compose.yml down && docker compose -f tools/compose.yml up
    # or
-   bundle exec jekyll serve --config site/_config.yml
+   cd site && bundle exec jekyll serve
    ```
 
 4. The consent dialog will automatically appear on your site's homepage on first visit

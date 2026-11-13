@@ -148,7 +148,7 @@ Assuming you have [Ruby](https://www.ruby-lang.org/en/downloads/) and [Bundler](
 bundle install
 # assuming pip is your Python package manager
 pip install jupyter
-bundle exec jekyll serve --config site/_config.yml
+cd site && bundle exec jekyll serve
 ```
 
 To see the template running, open your browser and go to `http://localhost:4000`. You should see a copy of the theme's [demo website](https://alshedivat.github.io/al-folio/). Now, feel free to customize the theme however you like. After you are done, remember to **commit** your final changes.
@@ -194,7 +194,7 @@ If you need to manually re-deploy your website to GitHub pages, go to Actions, c
 3. Netlify: In the deploy settings
    - Set **Branch to deploy** to `main`
    - **Base directory** is empty
-   - Set **Build command** to `sed -i "s/^\(baseurl: \).*$/baseurl:/" _config.yml && bundle exec jekyll build --config site/_config.yml`
+   - Set **Build command** to `sed -i "s/^\(baseurl: \).*$/baseurl:/" _config.yml && bash scripts/build.sh`
    - Set **Publish directory** to `_site`
 
 4. Netlify: Add the following two **environment variables**
@@ -210,7 +210,7 @@ If you need to manually re-deploy your website to GitHub pages, go to Actions, c
 If you decide to not use GitHub Pages and host your page elsewhere, simply run:
 
 ```bash
-bundle exec jekyll build --config site/_config.yml
+bash scripts/build.sh
 ```
 
 which will (re-)generate the static webpage in the `_site/` folder.
@@ -238,7 +238,7 @@ Firstly, from the deployment repo dir, checkout the git branch hosting your publ
 Then from the website sources dir (commonly your al-folio fork's clone):
 
 ```bash
-bundle exec jekyll build --config site/_config.yml --destination $HOME/repo/publishing-source
+bash scripts/build.sh --destination $HOME/repo/publishing-source
 ```
 
 This will instruct jekyll to deploy the website under `$HOME/repo/publishing-source`.

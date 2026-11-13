@@ -53,7 +53,7 @@ This guide covers common issues and their solutions. For more information, see [
 
 **For YAML syntax errors:**
 
-- Run `bundle exec jekyll build --config site/_config.yml` locally to see the exact error
+- Run `bash scripts/build.sh` locally to see the exact error
 - Check for unquoted special characters (`:`, `&`, `#`) in YAML strings
 
 ---
@@ -116,7 +116,7 @@ This guide covers common issues and their solutions. For more information, see [
 1. Delete `Gemfile.lock`: `rm Gemfile.lock`
 2. Update Bundler: `bundle update`
 3. Install gems: `bundle install`
-4. Try serving again: `bundle exec jekyll serve --config site/_config.yml`
+4. Try serving again: `cd site && bundle exec jekyll serve`
 
 ---
 
@@ -138,7 +138,7 @@ docker compose -f tools/compose.yml up    # Start fresh
 lsof -i :4000 | grep LISTEN | awk '{print $2}' | xargs kill
 
 # Or specify a different port
-bundle exec jekyll serve --config site/_config.yml --port 5000
+cd site && bundle exec jekyll serve --port 5000
 ```
 
 ---
@@ -195,7 +195,7 @@ bundle exec jekyll serve --config site/_config.yml --port 5000
 
 1. Check your color name is valid in `_sass/_variables.scss`
 2. Clear browser cache (see above)
-3. Rebuild: `docker compose -f tools/compose.yml up --build` (Docker) or `bundle exec jekyll build --config site/_config.yml` (Ruby)
+3. Rebuild: `docker compose -f tools/compose.yml up --build` (Docker) or `bash scripts/build.sh` (Ruby)
 4. Wait for GitHub Actions to complete
 5. Visit the site in a private/incognito window
 
@@ -226,7 +226,7 @@ bundle exec jekyll serve --config site/_config.yml --port 5000
 
 1. Check the filename format (uppercase, dashes, no spaces)
 2. Verify the date is today or in the past
-3. Rebuild: `bundle exec jekyll build --config site/_config.yml` and check for error messages
+3. Rebuild: `bash scripts/build.sh` and check for error messages
 
 ---
 
@@ -245,7 +245,7 @@ bundle exec jekyll serve --config site/_config.yml --port 5000
 
 ```bash
 # Local Ruby setup
-bundle exec jekyll build --config site/_config.yml 2>&1 | grep -i bibtex
+bash scripts/build.sh 2>&1 | grep -i bibtex
 
 # Docker
 docker compose run --rm web jekyll build 2>&1 | grep -i bibtex
@@ -320,7 +320,7 @@ nav:
 **To find errors:**
 
 1. Use a YAML validator: [yamllint.com](https://www.yamllint.com/)
-2. Run locally: `bundle exec jekyll build --config site/_config.yml` shows the exact error line
+2. Run locally: `bash scripts/build.sh` shows the exact error line
 3. Check that you didn't delete required lines (like `baseurl:`)
 
 ---
@@ -395,7 +395,7 @@ nav:
 2. If you want to enable it, ensure `Gemfile` has all dependencies installed:
    ```bash
    bundle install
-   bundle exec jekyll build --config site/_config.yml
+   bash scripts/build.sh
    ```
 
 ---

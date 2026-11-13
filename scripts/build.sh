@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-
-cd "$(dirname "${BASH_SOURCE[0]}")/.."
 set -euo pipefail
 
-bundle exec jekyll build --config site/_config.yml
+cd "$(dirname "${BASH_SOURCE[0]}")/../site"
+bundle exec jekyll build --trace "$@"

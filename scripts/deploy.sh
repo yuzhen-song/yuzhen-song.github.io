@@ -95,7 +95,7 @@ git checkout -b $DEPLOY_BRANCH
 export JEKYLL_ENV=production
 
 # Build site
-bundle exec jekyll build --config site/_config.yml
+bash scripts/build.sh
 
 # Purge unused css
 purgecss -c tools/purgecss.config.js
