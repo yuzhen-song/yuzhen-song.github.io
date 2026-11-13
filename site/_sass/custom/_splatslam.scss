@@ -82,9 +82,11 @@
 
 .splatslam-figure img,
 .splatslam-figure-grid img {
+  display: block;
+  margin-inline: auto;
   width: 100%;
-  border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: transparent;
+  border: 0;
 }
 
 .reference-small {
@@ -94,7 +96,7 @@
 .reference-small img {
   max-height: 230px;
   object-fit: contain;
-  background: #fff;
+  background: transparent;
 }
 
 .pipeline-figure {
@@ -105,7 +107,7 @@
 
 .pipeline-figure img {
   object-fit: contain;
-  background: #fff;
+  background: transparent;
 }
 
 .splatslam-figure-grid.two-col,

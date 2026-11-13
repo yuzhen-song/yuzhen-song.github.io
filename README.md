@@ -4,6 +4,8 @@
 
 Edit pages in `site/_pages/`, projects in `site/_projects/`, homepage sections in `site/_includes/home-*.liquid`, and styles in `site/_sass/custom/`. The CV is `site/assets/pdf/cv.pdf`.
 
+Project images and GIFs are in `site/assets/img/`, videos in `site/assets/video/`, and presentations in `site/assets/slides/`.
+
 Run locally at <http://localhost:8080>.
 
 ```bash

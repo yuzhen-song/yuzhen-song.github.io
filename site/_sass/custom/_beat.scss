@@ -35,9 +35,9 @@
   width: 100%;
   height: auto;
   object-fit: contain;
-  background: #f7f8f5;
-  border: 1px solid rgba(143, 177, 98, 0.2);
-  border-radius: 8px;
+  margin-inline: auto;
+  background: transparent;
+  border: 0;
 }
 
 .beat-cover-figure figcaption {
@@ -58,9 +58,9 @@
   width: 100%;
   max-height: 520px;
   object-fit: contain;
-  background: #f7f8f5;
-  border: 1px solid rgba(143, 177, 98, 0.2);
-  border-radius: 8px;
+  margin-inline: auto;
+  background: transparent;
+  border: 0;
 }
 
 .beat-figure figcaption {
