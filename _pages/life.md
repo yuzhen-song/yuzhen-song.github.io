@@ -12,23 +12,12 @@ I believe that a well-rounded life fuels creativity in research. When I am not d
 <br>
 
 ### 🏓 Sports & Music
-* **Pickleball:** I am an avid pickleball player and regularly participate in local tournaments. It keeps me energetic and sharp.
-* **Choir:** Singing in the university choir has taught me the beauty of harmony and teamwork.
+
+- **Pickleball:** I am an avid pickleball player and regularly participate in local tournaments. It keeps me energetic and sharp.
+- **Choir:** Singing in the university choir has taught me the beauty of harmony and teamwork.
 
 <br>
 
 ### 📷 Photography
-I love capturing moments of nature, architecture, and street life. Here are a few of my favorite shots:
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <!-- 请把这里的图片路径换成你自己的照片 -->
-        {% include figure.liquid loading="eager" path="assets/img/photo1.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/photo2.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/photo3.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
+I love capturing moments of nature, architecture, and street life.

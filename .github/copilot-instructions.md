@@ -1,5 +1,15 @@
 # Copilot Coding Agent Instructions
 
+## Personal site layout (current)
+
+This repository is Yuzhen Song's customized portfolio. Start with the root README for the current directory map. The sections below describe the upstream theme and optional features; template posts, books, teaching examples, and sample assets have been removed.
+
+- Personal styles are in `_sass/custom/`; content stays in `_pages/`, `_projects/`, and `_includes/home-*.liquid`.
+- The current CV is `assets/pdf/cv.pdf`. `_archive/` contains local originals and must not be committed or published.
+- Theme reference manuals and screenshots are in `docs/theme/`.
+- `Deploy site` checks formatting, builds Jekyll with Ruby 3.3.5, optimizes CSS, and validates generated local links before publishing. It does not require notebooks or ImageMagick while those features are disabled.
+- The older standalone Lychee and upstream Docker/Lighthouse workflows have been removed. `scripts/check_site.py` checks local files and fragment links without an external binary download.
+
 ## Repository Overview
 
 **al-folio** is a simple, clean, and responsive [Jekyll](https://jekyllrb.com/) theme for academics and researchers. It enables users to create professional portfolio and blog websites with minimal configuration. The repository serves both as a template and as a reference implementation.

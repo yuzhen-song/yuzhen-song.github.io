@@ -108,7 +108,7 @@ CV content in **RenderCV format** (recommended approach for generating professio
 
 **Alternative Format (JSONResume):** For an alternative format, see `assets/json/resume.json` which uses the [JSONResume](https://jsonresume.org/) standard. Switch between formats using the `cv_format` frontmatter variable in `_pages/cv.md` (options: `rendercv` or `jsonresume`).
 
-**For more details:** See [CUSTOMIZE.md § Modifying the CV information](CUSTOMIZE.md#modifying-the-cv-information) for setup, switching formats, and PDF generation configuration.
+**For more details:** See [CUSTOMIZE.md § Modifying the CV information](../../docs/theme/CUSTOMIZE.md#modifying-the-cv-information) for setup, switching formats, and PDF generation configuration.
 
 ### citations.yml
 

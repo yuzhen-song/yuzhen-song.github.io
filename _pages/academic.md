@@ -5,5 +5,7 @@ permalink: /academic/
 nav: true
 nav_order: 3
 home_section: publication
-redirect_to: /#publication
+redirect: /#publication
 ---
+
+[View publications on the homepage]({{ "/#publication" | relative_url }}).

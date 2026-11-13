@@ -40,6 +40,7 @@ category: Course Projects
       <iframe title="SplatSLAM interactive demo 5" src="https://sketchfab.com/models/26dffeeeb1e748d386671aeb205f9081/embed?autostart=1&ui_hint=0&ui_theme=dark" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>
       <iframe title="SplatSLAM interactive demo 6" src="https://sketchfab.com/models/2bd98d5914124023a06100404945fe2f/embed?autostart=1&ui_hint=0&ui_theme=dark" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>
     </div>
+
   </section>
 
   <section id="abstract" class="splatslam-section">
@@ -54,6 +55,7 @@ category: Course Projects
       <li><strong>Noise Robustness:</strong> integrating SOR denoising to eliminate floaters and SLAM artifacts.</li>
       <li><strong>Photo-realistic Rendering:</strong> achieving PSNR up to 49.46 dB for complex indoor novel view synthesis.</li>
     </ul>
+
   </section>
 
   <section id="methodology" class="splatslam-section">
@@ -93,6 +95,7 @@ category: Course Projects
       <img src="{{ '/assets/img/scene_comparison_table_en.png' | relative_url }}" alt="Scene comparison table">
       <figcaption>Experimental scene comparison summarizing texture richness, geometry completeness, and reconstruction difficulty.</figcaption>
     </figure>
+
   </section>
 
   <section class="splatslam-section">
@@ -127,6 +130,7 @@ category: Course Projects
       <img src="{{ '/assets/img/mast3r_slam_ate_tum_dataset.png' | relative_url }}" alt="TUM-RGBD SLAM benchmarking result">
       <figcaption>TUM-RGBD SLAM benchmarking result from the original project page.</figcaption>
     </figure>
+
   </section>
 
   <section class="splatslam-section">
@@ -138,6 +142,7 @@ category: Course Projects
       <img src="{{ '/assets/img/scene_difficulty_comparison.png' | relative_url }}" alt="Scene saliency comparison">
       <figcaption>Scene difficulty comparison across self-collected indoor environments.</figcaption>
     </figure>
+
   </section>
 
   <section class="splatslam-section">
@@ -190,6 +195,7 @@ category: Course Projects
         <figcaption>PSNR trap comparison: high PSNR from limited views can overfit, while wider coverage improves generalization.</figcaption>
       </figure>
     </div>
+
   </section>
 
   <section class="splatslam-section">
@@ -200,6 +206,7 @@ category: Course Projects
       <img src="{{ '/assets/img/iteration_metrics_table_en.png' | relative_url }}" alt="Iteration metrics table in English">
       <figcaption>Iteration metrics table summarizing rendering quality across training settings.</figcaption>
     </figure>
+
   </section>
 
   <section class="splatslam-section">
@@ -207,198 +214,3 @@ category: Course Projects
     <p>This project was developed as a final project for the <strong>Computer Vision</strong> course at Southern University of Science and Technology. We sincerely thank <strong>Prof. Feng Zheng</strong> and <strong>Prof. Weiyu Wang</strong> for their guidance, suggestions, and support throughout this work.</p>
   </section>
 </div>
-
-<style>
-.splatslam-page {
-  max-width: 920px;
-  margin: 0 auto;
-}
-
-.splatslam-header h1 {
-  margin-bottom: 0.75rem;
-  color: #20251b;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800 !important;
-  line-height: 1.1;
-}
-
-.splatslam-authors,
-.splatslam-affiliation {
-  margin-bottom: 0.35rem;
-  color: #4f5942;
-}
-
-.splatslam-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  margin: 1.1rem 0 1.8rem;
-}
-
-.splatslam-links a {
-  padding: 0.32rem 0.72rem;
-  border: 1px solid rgba(143, 177, 98, 0.45);
-  border-radius: 999px;
-  color: #6a8644;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.splatslam-section {
-  margin-top: 2rem;
-}
-
-.splatslam-section h2 {
-  margin-bottom: 0.9rem;
-  padding-bottom: 0.35rem;
-  border-bottom: 2px solid rgba(143, 177, 98, 0.45);
-  color: #20251b;
-  font-size: 1.55rem;
-  font-weight: 750 !important;
-}
-
-.splatslam-section h3 {
-  margin-top: 1.35rem;
-  color: #2f3428;
-  font-size: 1.08rem;
-  font-weight: 700 !important;
-}
-
-.splatslam-section p,
-.splatslam-section li,
-.splatslam-table {
-  color: #444;
-  line-height: 1.65;
-}
-
-.splatslam-highlights {
-  padding-left: 1.15rem;
-}
-
-.splatslam-method-list article {
-  margin-bottom: 1rem;
-}
-
-.splatslam-figure,
-.splatslam-figure-grid {
-  margin: 1.35rem 0;
-}
-
-.splatslam-figure.single-centered {
-  max-width: 680px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.splatslam-figure img,
-.splatslam-figure-grid img {
-  width: 100%;
-  border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.reference-small {
-  max-width: 520px;
-}
-
-.reference-small img {
-  max-height: 230px;
-  object-fit: contain;
-  background: #fff;
-}
-
-.pipeline-figure {
-  max-width: 760px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.pipeline-figure img {
-  object-fit: contain;
-  background: #fff;
-}
-
-.splatslam-figure-grid.two-col,
-.splatslam-figure-grid.full-width {
-  display: grid;
-  gap: 1rem;
-}
-
-.splatslam-figure-grid.two-col {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.splatslam-figure-grid.full-width {
-  grid-template-columns: 1fr;
-}
-
-.metrics-figures {
-  max-width: 760px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.splatslam-figure-grid figure,
-.splatslam-figure figure {
-  margin: 0;
-}
-
-.splatslam-figure-grid figcaption,
-.splatslam-figure figcaption {
-  margin-top: 0.42rem;
-  color: #777;
-  font-size: 0.84rem;
-  line-height: 1.45;
-  text-align: center;
-}
-
-.splatslam-embed-grid {
-  display: grid;
-  gap: 1rem;
-  margin: 1rem 0 1.4rem;
-}
-
-.splatslam-embed-grid.two-col {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.splatslam-embed-grid iframe {
-  width: 100%;
-  height: 360px;
-  border: 0;
-  border-radius: 8px;
-  background: #000;
-}
-
-.splatslam-table {
-  width: 100%;
-  margin: 1rem 0;
-  border-collapse: collapse;
-  font-size: 0.92rem;
-}
-
-.splatslam-table th,
-.splatslam-table td {
-  padding: 0.55rem 0.65rem;
-  border: 1px solid rgba(143, 177, 98, 0.25);
-  vertical-align: top;
-}
-
-.splatslam-table th {
-  background: rgba(143, 177, 98, 0.11);
-  color: #2f3428;
-}
-
-@media (max-width: 768px) {
-  .splatslam-figure-grid.two-col,
-  .splatslam-figure-grid.full-width,
-  .splatslam-embed-grid.two-col {
-    grid-template-columns: 1fr;
-  }
-
-  .splatslam-embed-grid iframe {
-    height: 320px;
-  }
-}
-</style>
