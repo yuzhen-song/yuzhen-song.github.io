@@ -26,7 +26,12 @@ ninja.data = [{
         },{id: "news-",
           title: '',
           description: "",
-          section: "News",},{id: "projects-beat-posture-independent-wrist-blood-pressure-monitor",
+          section: "News",},{id: "projects-takeoff-and-strength-analysis-of-a-quadcopter-frame-using-abaqus",
+          title: 'Takeoff and Strength Analysis of a Quadcopter Frame using Abaqus',
+          description: "Finite element modeling of a quadcopter under takeoff loads, examining stress concentrations and displacement with Abaqus/Explicit.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/abaqus-quadcopter/";
+            },},{id: "projects-beat-posture-independent-wrist-blood-pressure-monitor",
           title: 'BEAT: Posture-Independent Wrist Blood Pressure Monitor',
           description: "A barometric-inertial sensing system for compensating hydrostatic errors in wrist blood pressure measurement.",
           section: "Projects",handler: () => {
