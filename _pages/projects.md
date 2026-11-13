@@ -51,5 +51,7 @@ display_categories: [Research Projects, Course Projects, Competitions]
 
       </div>
     {% endfor %}
+
 {% endif %}
+
 </div>
