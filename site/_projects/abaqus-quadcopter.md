@@ -3,7 +3,7 @@ layout: page
 permalink: /projects/abaqus-quadcopter/
 title: Takeoff and Strength Analysis of a Quadcopter Frame using Abaqus
 description: Finite element modeling of a quadcopter under takeoff loads, examining stress concentrations and displacement with Abaqus/Explicit.
-img: assets/img/abaqus-quadcopter/overview.png
+img: assets/img/abaqus-quadcopter/takeoff.gif
 importance: 3
 category: Course Projects
 links:
@@ -19,14 +19,25 @@ links:
   <a href="{{ '/assets/slides/abaqus-quadcopter.pptx' | relative_url }}" download>Download presentation <span aria-hidden="true">↗</span> <small>(PPTX · 18 MB)</small></a>
 </p>
 
+<figure class="abaqus-figure abaqus-cover">
+  <img src="{{ '/assets/img/abaqus-quadcopter/takeoff.gif' | relative_url }}" alt="Animated Abaqus view of quadcopter takeoff with a von Mises stress contour" width="400" height="196">
+  <figcaption>Quadcopter takeoff simulation. <a href="{{ '/assets/video/abaqus-quadcopter/takeoff.mp4' | relative_url }}">Watch the higher-resolution video</a>.</figcaption>
+</figure>
+
 ### Overview
 
 How does a lightweight quadcopter frame respond as its motors generate lift? In this team project, we built an Abaqus finite element model to examine the load transfer from the motors to the central body during takeoff. The study connects geometry simplification, material assignment, assembly constraints, meshing, and dynamic analysis to the interpretation of stress and displacement fields.
 
-<figure class="abaqus-figure">
-  <img src="{{ '/assets/img/abaqus-quadcopter/geometry.png' | relative_url }}" alt="Quadcopter CAD assembly with four ribbed arms, motors, propellers, and a central battery housing" width="752" height="463" loading="lazy">
-  <figcaption>The quadcopter assembly used to develop the structural model.</figcaption>
-</figure>
+<div class="abaqus-grid">
+  <figure class="abaqus-figure">
+    <a href="{{ '/assets/img/abaqus-quadcopter/geometry.png' | relative_url }}"><img src="{{ '/assets/img/abaqus-quadcopter/geometry.png' | relative_url }}" alt="Quadcopter CAD assembly with four ribbed arms, motors, propellers, and a central battery housing" width="752" height="463" loading="lazy"></a>
+    <figcaption>The quadcopter assembly used to develop the structural model.</figcaption>
+  </figure>
+  <figure class="abaqus-figure">
+    <a href="{{ '/assets/img/abaqus-quadcopter/overview.png' | relative_url }}"><img src="{{ '/assets/img/abaqus-quadcopter/overview.png' | relative_url }}" alt="Quadcopter stress visualization featured on the presentation cover" width="1195" height="612" loading="lazy"></a>
+    <figcaption>Stress visualization from the presentation cover.</figcaption>
+  </figure>
+</div>
 
 ### From geometry to a finite element model
 
@@ -55,24 +66,20 @@ The Abaqus setup uses **Dynamic, Explicit**, a **1.2 s** analysis period, and ge
 
 The stress contours highlight the arm-to-body junctions and rib transitions as regions of interest. These locations transfer the motor loads into the central frame and are candidates for local mesh refinement and structural reinforcement.
 
-<figure class="abaqus-figure">
-  <a href="{{ '/assets/img/abaqus-quadcopter/stress.png' | relative_url }}"><img src="{{ '/assets/img/abaqus-quadcopter/stress.png' | relative_url }}" alt="Von Mises stress contour at approximately 0.36 seconds, showing elevated stresses near the arm roots and rib transitions" loading="lazy"></a>
-  <figcaption>Von Mises stress at approximately 0.36 s. The original contour legend and frame information are preserved.</figcaption>
-</figure>
-
 The displacement output complements the stress view by showing the assembly's motion during takeoff. The figure below displays the **U2 displacement component**, rather than displacement magnitude. Because the vehicle is moving, this field includes overall motion and should not be read as elastic arm deflection alone.
 
-<figure class="abaqus-figure">
-  <a href="{{ '/assets/img/abaqus-quadcopter/displacement.png' | relative_url }}"><img src="{{ '/assets/img/abaqus-quadcopter/displacement.png' | relative_url }}" alt="U2 displacement component of the quadcopter at approximately 0.36 seconds" loading="lazy"></a>
-  <figcaption>U2 displacement at the same output frame. Click either result figure to inspect it at full resolution.</figcaption>
-</figure>
+<div class="abaqus-grid">
+  <figure class="abaqus-figure">
+    <a href="{{ '/assets/img/abaqus-quadcopter/stress.png' | relative_url }}"><img src="{{ '/assets/img/abaqus-quadcopter/stress.png' | relative_url }}" alt="Von Mises stress contour at approximately 0.36 seconds, showing elevated stresses near the arm roots and rib transitions" loading="lazy"></a>
+    <figcaption>Von Mises stress at approximately 0.36 s.</figcaption>
+  </figure>
+  <figure class="abaqus-figure">
+    <a href="{{ '/assets/img/abaqus-quadcopter/displacement.png' | relative_url }}"><img src="{{ '/assets/img/abaqus-quadcopter/displacement.png' | relative_url }}" alt="U2 displacement component of the quadcopter at approximately 0.36 seconds" loading="lazy"></a>
+    <figcaption>U2 displacement at the same output frame.</figcaption>
+  </figure>
+</div>
 
-### Simulation in motion
-
-<figure class="abaqus-figure abaqus-animation">
-  <img src="{{ '/assets/img/abaqus-quadcopter/takeoff.gif' | relative_url }}" alt="Animated Abaqus view of quadcopter takeoff with a von Mises stress contour" loading="lazy">
-  <figcaption>Takeoff animation from the project materials. <a href="{{ '/assets/video/abaqus-quadcopter/takeoff.mp4' | relative_url }}">Watch the higher-resolution video</a>.</figcaption>
-</figure>
+Click any static image to inspect the full-resolution figure and its original legend.
 
 ### Takeaways and next steps
 
