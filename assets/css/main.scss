@@ -27,6 +27,6 @@
 @use "custom/site";
 @use "custom/home";
 @use "custom/projects";
-@use "custom/publications";
+@use "custom/publications" as home-publications;
 @use "custom/beat";
 @use "custom/splatslam";
