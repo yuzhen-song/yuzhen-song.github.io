@@ -11,6 +11,13 @@
             <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
           </h3>
           <p>{{ project.description }}</p>
+          {% if project.links %}
+            <p class="home-project-links">
+              {% for link in project.links %}
+                <a href="{{ link.url | relative_url }}">[{{ link.name }}]</a>
+              {% endfor %}
+            </p>
+          {% endif %}
         </div>
       </article>
     {% endif %}
