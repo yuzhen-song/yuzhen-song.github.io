@@ -1,4 +1,4 @@
-# Yuzhen Song ? Personal Website
+# Yuzhen Song - Personal Website
 
 Live site: <https://yuzhen-song.github.io>
 
