@@ -1,0 +1,68 @@
+.abaqus-project {
+  .abaqus-meta {
+    color: var(--global-text-color-light);
+    line-height: 1.8;
+  }
+
+  .abaqus-resources {
+    margin: 1rem 0 2.25rem;
+
+    a {
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid currentColor;
+      text-decoration: none;
+    }
+
+    small {
+      margin-left: 0.35rem;
+    }
+  }
+
+  h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  li {
+    margin-bottom: 0.75rem;
+  }
+
+  .abaqus-figure {
+    margin: 1.5rem 0 2rem;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--global-divider-color);
+      border-radius: 8px;
+    }
+
+    figcaption {
+      padding: 0.75rem 0.25rem 0;
+      color: var(--global-text-color-light);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+  }
+
+  .abaqus-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .abaqus-animation {
+    max-width: 400px;
+    margin-inline: auto;
+  }
+
+  @media (max-width: 600px) {
+    .abaqus-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+}
