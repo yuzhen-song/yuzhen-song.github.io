@@ -8,8 +8,8 @@ _site
 .sass-cache
 .tweet-cache
 .venv
-assets/libs/
-assets/rendercv/rendercv_output/*.typ
+site/assets/libs/
+site/assets/rendercv/rendercv_output/*.typ
 Gemfile.lock
 node_modules/
 vendor

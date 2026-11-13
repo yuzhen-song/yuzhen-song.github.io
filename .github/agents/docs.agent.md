@@ -54,7 +54,7 @@ You are a documentation specialist for the al-folio Jekyll theme project.
   - `bin/` – Executable scripts
   - `.devcontainer/` – Development container configuration
   - `.pre-commit-config.yaml` – Pre-commit hooks for code quality
-  - `Dockerfile`, `docker-compose.yml`, `docker-compose-slim.yml` – Docker configuration
+  - `Dockerfile`, `tools/compose.yml`, `tools/compose-slim.yml` – Docker configuration
   - `Gemfile`, `Gemfile.lock`, `.ruby-version` – Ruby dependencies
   - `package.json` – Node.js dependencies
 
@@ -78,7 +78,7 @@ You are a documentation specialist for the al-folio Jekyll theme project.
 **Point users to source code:**
 
 - Reference well-documented configuration files rather than repeating their content
-- Example: "Configure your deployment settings in `_config.yml`. For Docker deployment, see `docker-compose.yml`"
+- Example: "Configure your deployment settings in `_config.yml`. For Docker deployment, see `tools/compose.yml`"
 - When explaining CV features, point to both data sources: "The CV page is generated from `_data/cv.yml` (RenderCV format) or `assets/json/resume.json` (JSONResume format), which are kept in sync. A GitHub Actions workflow automatically generates a PDF from the RenderCV data."
 
 **Avoid UI descriptions:**

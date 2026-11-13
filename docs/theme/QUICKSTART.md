@@ -1,8 +1,10 @@
 # Quick Start Guide
 
+> Website source paths in this theme reference are relative to `site/`. Run development commands from the repository root. Docker and build configuration are in `tools/`.
+
 **Get your al-folio site running in 5 minutes.** This guide is for users who just want a working website quickly without deep customization.
 
-> **Video Tutorial:** Watch a walkthrough of these steps [here](../../assets/video/tutorial_al_folio.mp4)
+> **Video Tutorial:** Watch a walkthrough of these steps [here](../../site/assets/video/tutorial_al_folio.mp4)
 
 <!--ts-->
 

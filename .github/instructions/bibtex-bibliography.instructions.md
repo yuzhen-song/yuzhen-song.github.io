@@ -1,5 +1,5 @@
 ---
-applyTo: "**/*.bib,_bibliography/**"
+applyTo: "**/*.bib,site/_bibliography/**"
 excludeAgent: "code-review"
 ---
 
@@ -130,8 +130,8 @@ When using `pdf`, `poster`, `preview`, or similar fields:
 1. **Syntax check:** Verify no unclosed braces or quotes
 2. **Build test:**
    ```bash
-   docker compose down
-   docker compose up
+   docker compose -f tools/compose.yml down
+   docker compose -f tools/compose.yml up
    # Check output for "ERROR" or "Invalid bibtex"
    # Publications should render at http://localhost:8080/publications/
    ```
@@ -151,7 +151,7 @@ When using `pdf`, `poster`, `preview`, or similar fields:
 1. Add entry to `_bibliography/papers.bib`
 2. Use consistent key naming (e.g., `LastnameYear` or `Lastname2023details`)
 3. Ensure all required fields are present
-4. Test build: `docker compose up`
+4. Test build: `docker compose -f tools/compose.yml up`
 
 ### Modifying Existing Entries
 
@@ -169,6 +169,6 @@ When using `pdf`, `poster`, `preview`, or similar fields:
 When working with BibTeX:
 
 - Follow the standard format shown in examples above
-- Always test locally with `docker compose up` after changes
+- Always test locally with `docker compose -f tools/compose.yml up` after changes
 - Check the publications page at http://localhost:8080/publications to verify display
 - Only search for additional details if encountering error messages not mentioned here

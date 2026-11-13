@@ -1,5 +1,5 @@
 ---
-applyTo: "_config.yml,_data/**/*.yml"
+applyTo: "site/_config.yml,site/_data/**/*.yml"
 ---
 
 # YAML Configuration Instructions
@@ -42,7 +42,7 @@ Look for `enabled: false/true` patterns. Common ones:
 If you modify `_config.yml`, verify syntax by running:
 
 ```bash
-docker compose up
+docker compose -f tools/compose.yml up
 # Site should start without YAML parse errors
 # Check output for "YAML parse error" or "valid YAML"
 ```
@@ -97,10 +97,10 @@ CV content in **RenderCV format** (recommended approach for generating professio
 
 **Key Files:**
 
-- [`_data/cv.yml`](_data/cv.yml) — Main CV content in RenderCV format
-- [`assets/rendercv/design.yaml`](assets/rendercv/design.yaml) — Design and styling customization
-- [`assets/rendercv/locale.yaml`](assets/rendercv/locale.yaml) — Localization and text formatting
-- [`assets/rendercv/settings.yaml`](assets/rendercv/settings.yaml) — RenderCV-specific settings
+- [`_data/cv.yml`](site/_data/cv.yml) — Main CV content in RenderCV format
+- [`assets/rendercv/design.yaml`](site/assets/rendercv/design.yaml) — Design and styling customization
+- [`assets/rendercv/locale.yaml`](site/assets/rendercv/locale.yaml) — Localization and text formatting
+- [`assets/rendercv/settings.yaml`](site/assets/rendercv/settings.yaml) — RenderCV-specific settings
 
 **Usage:** Rendered by `cv.liquid` layout on CV page; displayed in `about.liquid` on home page.
 
@@ -173,7 +173,7 @@ Co-author information for bibliography/publications.
 2. Keep entries alphabetically sorted
 3. Ensure `icon` identifiers match available icons (Academicons or Font Awesome)
 4. Use full profile URLs in `url` field
-5. Test: `docker compose up` → check social icons on site
+5. Test: `docker compose -f tools/compose.yml up` → check social icons on site
 
 ### Modifying Site Metadata
 
@@ -200,8 +200,8 @@ Update these in `_config.yml`:
 
    ```bash
    # Run Jekyll build to validate YAML
-   docker compose down
-   docker compose up
+   docker compose -f tools/compose.yml down
+   docker compose -f tools/compose.yml up
    # Wait for "Server running" message
    # Check output for "YAML parse error" messages
    ```
@@ -243,7 +243,7 @@ Update these in `_config.yml`:
 
 When working with YAML configuration:
 
-- Always test locally with `docker compose up` after changes
+- Always test locally with `docker compose -f tools/compose.yml up` after changes
 - Quote any string containing special characters
 - Keep indentation consistent (2 spaces)
 - Check output for YAML parse errors before committing

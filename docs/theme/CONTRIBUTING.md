@@ -1,5 +1,7 @@
 # Contributing to al-folio
 
+> Website source paths in this theme reference are relative to `site/`. Run development commands from the repository root. Docker and build configuration are in `tools/`.
+
 Thank you for considering contributing to al-folio!
 
 ## Pull Requests

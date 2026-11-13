@@ -1,3 +1,5 @@
+source: site
+destination: _site
 lang: en
 # -----------------------------------------------------------------------------
 # Site settings
@@ -184,26 +186,7 @@ kramdown:
 
 # Includes & excludes
 include: ["_pages", "_scripts"]
-exclude:
-  - docs/
-  - scripts/
-  - node_modules/
-  - _archive/
-  - AGENTS.md
-  - CLAUDE.md
-  - requirements.txt
-  - bin/
-  - Dockerfile
-  - docker-compose.yml
-  - docker-compose-slim.yml
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - package.json
-  - package-lock.json
-  - purgecss.config.js
-  - README.md
-  - vendor
+exclude: []
 keep_files:
   - CNAME
   - .nojekyll

@@ -1,5 +1,7 @@
 # SEO Best Practices Guide
 
+> Website source paths in this theme reference are relative to `site/`. Run development commands from the repository root. Docker and build configuration are in `tools/`.
+
 This guide helps you optimize your al-folio website for search engines so your research and work are discoverable.
 
 <!--ts-->
@@ -62,7 +64,7 @@ al-folio auto-generates a `sitemap.xml` and `robots.txt` for you. These tell sea
 If they're missing:
 
 1. Check `_config.yml` has a valid `url`
-2. Rebuild: `bundle exec jekyll build`
+2. Rebuild: `bundle exec jekyll build --config site/_config.yml`
 3. Check `_site/` directory has both files
 
 **No configuration needed** – al-folio handles this automatically.
@@ -389,7 +391,7 @@ Use one H1 per page, usually your blog post or page title
 - Use descriptive filenames: `neural-network-architecture.png` (not `img1.png`)
 - Add alt text (also helps accessibility):
   ```markdown
-  ![Neural network showing three layers with training accuracy of 95%](../../assets/img/neural-network.png)
+  ![Neural network showing three layers with training accuracy of 95%](../../site/assets/img/neural-network.png)
   ```
 
 **For performance:**

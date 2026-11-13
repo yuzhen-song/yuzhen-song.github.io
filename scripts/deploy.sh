@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
 # Run this script to deploy the app to Github Pages
 
 # Parse cmd arguments
@@ -93,10 +95,10 @@ git checkout -b $DEPLOY_BRANCH
 export JEKYLL_ENV=production
 
 # Build site
-bundle exec jekyll build
+bundle exec jekyll build --config site/_config.yml
 
 # Purge unused css
-purgecss -c purgecss.config.js
+purgecss -c tools/purgecss.config.js
 
 # Delete and move files
 find . -maxdepth 1 ! -name '_site' ! -name '.git' ! -name 'CNAME' ! -name '.gitignore' -exec rm -rf {} \;

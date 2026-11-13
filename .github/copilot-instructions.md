@@ -2,10 +2,12 @@
 
 ## Personal site layout (current)
 
+The site source is `site/`, configured by `site/_config.yml`. Use `bundle exec jekyll build --config site/_config.yml` from the repository root. Docker configuration and optional Python dependencies live in `tools/`. Build output remains `_site/`.
+
 This repository is Yuzhen Song's customized portfolio. Start with the root README for the current directory map. The sections below describe the upstream theme and optional features; template posts, books, teaching examples, and sample assets have been removed.
 
-- Personal styles are in `_sass/custom/`; content stays in `_pages/`, `_projects/`, and `_includes/home-*.liquid`.
-- The current CV is `assets/pdf/cv.pdf`. `_archive/` contains local originals and must not be committed or published.
+- Personal styles are in `site/_sass/custom/`; content stays in `site/_pages/`, `site/_projects/`, and `site/_includes/home-*.liquid`.
+- The current CV is `site/assets/pdf/cv.pdf`. `_archive/` contains local originals and must not be committed or published.
 - Theme reference manuals and screenshots are in `docs/theme/`.
 - `Deploy site` checks formatting, builds Jekyll with Ruby 3.3.5, optimizes CSS, and validates generated local links before publishing. It does not require notebooks or ImageMagick while those features are disabled.
 - The older standalone Lychee and upstream Docker/Lighthouse workflows have been removed. `scripts/check_site.py` checks local files and fragment links without an external binary download.
@@ -55,28 +57,28 @@ This repository is Yuzhen Song's customized portfolio. Start with the root READM
 **Initial Setup:**
 
 ```bash
-docker compose pull                    # Pull prebuilt image
-docker compose up                      # Start development server
+docker compose -f tools/compose.yml pull                    # Pull prebuilt image
+docker compose -f tools/compose.yml up                      # Start development server
 # Site runs at http://localhost:8080
 ```
 
 **Rebuilding with Updated Dependencies:**
 
 ```bash
-docker compose up --build              # Rebuilds Docker image from Dockerfile
-docker compose up --force-recreate     # Forces complete rebuild
+docker compose -f tools/compose.yml up --build              # Rebuilds Docker image from Dockerfile
+docker compose -f tools/compose.yml up --force-recreate     # Forces complete rebuild
 ```
 
 **For slim Docker image (if image size is critical):**
 
 ```bash
-docker compose -f docker-compose-slim.yml up
+docker compose -f tools/compose-slim.yml up
 ```
 
 **If Docker build fails:**
 
 - Check disk space and available RAM
-- Kill any existing jekyll processes: `docker compose down`
+- Kill any existing jekyll processes: `docker compose -f tools/compose.yml down`
 - For M1/M2 Mac: Ensure Docker Desktop is up-to-date
 - Linux users may need Docker group permissions: `sudo usermod -aG docker $USER` (then logout/login)
 
@@ -85,7 +87,7 @@ docker compose -f docker-compose-slim.yml up
 ```bash
 bundle install                         # Install Ruby gems
 pip install jupyter                    # Install Python dependencies
-bundle exec jekyll serve --port 4000   # Run at http://localhost:4000
+bundle exec jekyll serve --config site/_config.yml --port 4000   # Run at http://localhost:4000
 ```
 
 ### Important Build Requirements
@@ -100,20 +102,20 @@ bundle exec jekyll serve --port 4000   # Run at http://localhost:4000
 
 ### Root Directory Structure
 
-- `_bibliography/papers.bib` – BibTeX bibliography for publications
-- `_config.yml` – **Primary configuration file** (title, author, URLs, baseurl, feature flags)
-- `_data/` – YAML data files (socials.yml, coauthors.yml, cv.yml, citations.yml, venues.yml, repositories.yml)
-- `_includes/` – Reusable Liquid template components
-- `_layouts/` – Page layout templates (about.liquid, post.liquid, bib.liquid, distill.liquid, cv.liquid, etc.)
-- `_news/` – News/announcement entries
-- `_pages/` – Static pages (about.md, cv.md, publications.md, projects.md, teaching.md, etc.)
+- `site/_bibliography/papers.bib` – BibTeX bibliography for publications
+- `site/_config.yml` – **Primary configuration file** (title, author, URLs, baseurl, feature flags)
+- `site/_data/` – YAML data files (socials.yml, coauthors.yml, cv.yml, citations.yml, venues.yml, repositories.yml)
+- `site/_includes/` – Reusable Liquid template components
+- `site/_layouts/` – Page layout templates (about.liquid, post.liquid, bib.liquid, distill.liquid, cv.liquid, etc.)
+- `site/_news/` – News/announcement entries
+- `site/_pages/` – Static pages (about.md, cv.md, publications.md, projects.md, teaching.md, etc.)
 - `_posts/` – Blog posts (format: YYYY-MM-DD-title.md)
-- `_projects/` – Project showcase entries
-- `_sass/` – SCSS stylesheets
-- `_scripts/` – JavaScript files for functionality
+- `site/_projects/` – Project showcase entries
+- `site/_sass/` – SCSS stylesheets
+- `site/_scripts/` – JavaScript files for functionality
 - `_teachings/` – Course and teaching entries
-- `assets/img/` – Images, profile pictures
-- `docker-compose.yml` – Docker compose configuration
+- `site/assets/img/` – Images, profile pictures
+- `tools/compose.yml` – Docker compose configuration
 - `Dockerfile` – Docker image definition
 - `Gemfile` & `Gemfile.lock` – Ruby dependency specifications
 - `package.json` – Node.js dependencies (prettier only)
@@ -123,11 +125,11 @@ bundle exec jekyll serve --port 4000   # Run at http://localhost:4000
 
 When making changes:
 
-1. **Always start with `_config.yml`** for site-wide settings
-2. **Feature flags are in `_config.yml`** – Look for `enabled: true/false` options
-3. **Social media links:** `_data/socials.yml`
-4. **Content data:** Respective `_data/*.yml` files
-5. **Styling:** `_sass/` directory (uses SCSS)
+1. **Always start with `site/_config.yml`** for site-wide settings
+2. **Feature flags are in `site/_config.yml`** – Look for `enabled: true/false` options
+3. **Social media links:** `site/_data/socials.yml`
+4. **Content data:** Respective `site/_data/*.yml` files
+5. **Styling:** `site/_sass/` directory (uses SCSS)
 
 ## CI/CD Pipeline & Validation
 
@@ -136,7 +138,7 @@ When making changes:
 - **deploy.yml** – Main deployment workflow (runs on push/PR to main/master)
   - Sets up Ruby 3.3.5, Python 3.13
   - Installs imagemagick, nbconvert
-  - Runs `bundle exec jekyll build` with JEKYLL_ENV=production
+  - Runs `bundle exec jekyll build --config site/_config.yml` with JEKYLL_ENV=production
   - Runs purgecss for CSS optimization
   - Commits built site to gh-pages branch
   - **Triggers on:** Changes to site files, assets, config (NOT documentation files alone)
@@ -165,7 +167,7 @@ npx prettier . --write
 2. **Local build test with Jekyll:**
 
 ```bash
-docker compose pull && docker compose up
+docker compose -f tools/compose.yml pull && docker compose -f tools/compose.yml up
 # Let it build (wait 30-60 seconds)
 # Visit http://localhost:8080 and verify site renders correctly
 # Exit with Ctrl+C
@@ -174,8 +176,8 @@ docker compose pull && docker compose up
 3. **Or run full build simulation:**
 
 ```bash
-docker compose up --build
-bundle exec jekyll build
+docker compose -f tools/compose.yml up --build
+bundle exec jekyll build --config site/_config.yml
 # Check for errors in output
 ```
 
@@ -185,7 +187,7 @@ bundle exec jekyll build
 
 - **Problem:** Special characters (`:`, `&`, `#`) in values cause parse errors
 - **Solution:** Quote string values: `title: "My: Cool Site"`
-- **Debug:** Run locally to see detailed error: `bundle exec jekyll build`
+- **Debug:** Run locally to see detailed error: `bundle exec jekyll build --config site/_config.yml`
 
 ### "Unknown tag 'toc'" Error on Deployment
 
@@ -196,7 +198,7 @@ bundle exec jekyll build
 ### CSS/JS Not Loading After Deploy
 
 - **Problem:** Site loads but has no styling
-- **Cause:** Incorrect `url` and `baseurl` in `_config.yml`
+- **Cause:** Incorrect `url` and `baseurl` in `site/_config.yml`
 - **Fix:**
   - Personal site: `url: https://username.github.io`, `baseurl:` (empty)
   - Project site: `url: https://username.github.io`, `baseurl: /repo-name/`
@@ -213,7 +215,7 @@ bundle exec jekyll build
 
 ### Port 8080 or 4000 Already in Use
 
-- **Docker:** `docker compose down` then `docker compose up`
+- **Docker:** `docker compose -f tools/compose.yml down` then `docker compose -f tools/compose.yml up`
 - **Ruby:** Kill process: `lsof -i :4000 | grep LISTEN | awk '{print $2}' | xargs kill`
 
 ### Related Posts Errors ("Zero vectors cannot be normalized")

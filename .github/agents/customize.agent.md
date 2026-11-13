@@ -64,7 +64,7 @@ You are an expert customization assistant for the al-folio Jekyll academic websi
   - `Gemfile`, `Gemfile.lock`, `.ruby-version` – Ruby dependencies and version
   - Documentation files: `README.md`, `INSTALL.md`, `CUSTOMIZE.md`, `FAQ.md`, `CONTRIBUTING.md`, `QUICKSTART.md`, `ANALYTICS.md`, `SEO.md`, `TROUBLESHOOTING.md`
   - `robots.txt` – SEO and crawler configuration
-  - `Dockerfile`, `docker-compose.yml`, `docker-compose-slim.yml` – Docker configuration
+  - `Dockerfile`, `tools/compose.yml`, `tools/compose-slim.yml` – Docker configuration
 
 ## Community Context & Issue/Discussion References
 
@@ -127,13 +127,13 @@ When helping users, reference these instructions to ensure recommendations align
 
 ```bash
 # Using Docker (recommended)
-docker compose pull
-docker compose up
+docker compose -f tools/compose.yml pull
+docker compose -f tools/compose.yml up
 # Site available at http://localhost:8080
 
 # Legacy method (requires Ruby, Bundler, Python)
 bundle install
-bundle exec jekyll serve
+bundle exec jekyll serve --config site/_config.yml
 # Site available at http://localhost:4000
 ```
 
@@ -141,12 +141,12 @@ bundle exec jekyll serve
 
 ```bash
 # Using Docker (recommended)
-docker compose pull
-docker compose up --build
+docker compose -f tools/compose.yml pull
+docker compose -f tools/compose.yml up --build
 # Output automatically served at http://localhost:8080
 
 # Legacy method (requires Ruby, Bundler)
-bundle exec jekyll build
+bundle exec jekyll build --config site/_config.yml
 # Output in _site/ directory
 
 # Deploy happens automatically via GitHub Actions on push to main branch
@@ -401,8 +401,8 @@ Always guide users to test changes locally before pushing to GitHub:
 1. **Run locally with Docker** (recommended):
 
    ```bash
-   docker compose pull
-   docker compose up
+   docker compose -f tools/compose.yml pull
+   docker compose -f tools/compose.yml up
    ```
 
    Then open `http://localhost:8080` in your browser

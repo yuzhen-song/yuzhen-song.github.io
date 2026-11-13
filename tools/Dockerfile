@@ -66,11 +66,11 @@ RUN bundle install --no-cache
 
 EXPOSE 8080
 
-COPY bin/entry_point.sh /tmp/entry_point.sh
+COPY scripts/serve.sh /srv/jekyll/scripts/serve.sh
 
 # uncomment this if you are having this issue with the build:
 # /usr/local/bundle/gems/jekyll-4.3.4/lib/jekyll/site.rb:509:in `initialize': Permission denied @ rb_sysopen - /srv/jekyll/.jekyll-cache/.gitignore (Errno::EACCES)
 # set the ownership of the jekyll site directory to the non-root user
 # USER $USERNAME
 
-CMD ["/tmp/entry_point.sh"]
+CMD ["bash", "scripts/serve.sh"]

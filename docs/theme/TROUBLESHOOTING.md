@@ -1,5 +1,7 @@
 # Troubleshooting Guide
 
+> Website source paths in this theme reference are relative to `site/`. Run development commands from the repository root. Docker and build configuration are in `tools/`.
+
 This guide covers common issues and their solutions. For more information, see [FAQ.md](FAQ.md) or check [GitHub Discussions](https://github.com/alshedivat/al-folio/discussions).
 
 <!--ts-->
@@ -51,7 +53,7 @@ This guide covers common issues and their solutions. For more information, see [
 
 **For YAML syntax errors:**
 
-- Run `bundle exec jekyll build` locally to see the exact error
+- Run `bundle exec jekyll build --config site/_config.yml` locally to see the exact error
 - Check for unquoted special characters (`:`, `&`, `#`) in YAML strings
 
 ---
@@ -88,12 +90,12 @@ This guide covers common issues and their solutions. For more information, see [
 
 ### Docker build fails
 
-**Problem:** `docker compose up` fails or shows errors.
+**Problem:** `docker compose -f tools/compose.yml up` fails or shows errors.
 
 **Solution:**
 
-1. Update Docker: `docker compose pull`
-2. Rebuild: `docker compose up --build`
+1. Update Docker: `docker compose -f tools/compose.yml pull`
+2. Rebuild: `docker compose -f tools/compose.yml up --build`
 3. If still failing, check your system resources (disk space, RAM)
 4. For M1/M2 Mac users, verify you're using a compatible Docker version
 5. Check Docker Desktop is running
@@ -114,7 +116,7 @@ This guide covers common issues and their solutions. For more information, see [
 1. Delete `Gemfile.lock`: `rm Gemfile.lock`
 2. Update Bundler: `bundle update`
 3. Install gems: `bundle install`
-4. Try serving again: `bundle exec jekyll serve`
+4. Try serving again: `bundle exec jekyll serve --config site/_config.yml`
 
 ---
 
@@ -125,8 +127,8 @@ This guide covers common issues and their solutions. For more information, see [
 **Solution - Docker:**
 
 ```bash
-docker compose down  # Stop the running container
-docker compose up    # Start fresh
+docker compose -f tools/compose.yml down  # Stop the running container
+docker compose -f tools/compose.yml up    # Start fresh
 ```
 
 **Solution - Local Ruby:**
@@ -136,7 +138,7 @@ docker compose up    # Start fresh
 lsof -i :4000 | grep LISTEN | awk '{print $2}' | xargs kill
 
 # Or specify a different port
-bundle exec jekyll serve --port 5000
+bundle exec jekyll serve --config site/_config.yml --port 5000
 ```
 
 ---
@@ -193,7 +195,7 @@ bundle exec jekyll serve --port 5000
 
 1. Check your color name is valid in `_sass/_variables.scss`
 2. Clear browser cache (see above)
-3. Rebuild: `docker compose up --build` (Docker) or `bundle exec jekyll build` (Ruby)
+3. Rebuild: `docker compose -f tools/compose.yml up --build` (Docker) or `bundle exec jekyll build --config site/_config.yml` (Ruby)
 4. Wait for GitHub Actions to complete
 5. Visit the site in a private/incognito window
 
@@ -224,7 +226,7 @@ bundle exec jekyll serve --port 5000
 
 1. Check the filename format (uppercase, dashes, no spaces)
 2. Verify the date is today or in the past
-3. Rebuild: `bundle exec jekyll build` and check for error messages
+3. Rebuild: `bundle exec jekyll build --config site/_config.yml` and check for error messages
 
 ---
 
@@ -243,7 +245,7 @@ bundle exec jekyll serve --port 5000
 
 ```bash
 # Local Ruby setup
-bundle exec jekyll build 2>&1 | grep -i bibtex
+bundle exec jekyll build --config site/_config.yml 2>&1 | grep -i bibtex
 
 # Docker
 docker compose run --rm web jekyll build 2>&1 | grep -i bibtex
@@ -266,7 +268,7 @@ docker compose run --rm web jekyll build 2>&1 | grep -i bibtex
 1. **Correct path format:**
 
    ```markdown
-   ![Alt text](../../assets/img/image-name.jpg)
+   ![Alt text](../../site/assets/img/image-name.jpg)
    ```
 
 2. **Check the file exists:**
@@ -318,7 +320,7 @@ nav:
 **To find errors:**
 
 1. Use a YAML validator: [yamllint.com](https://www.yamllint.com/)
-2. Run locally: `bundle exec jekyll build` shows the exact error line
+2. Run locally: `bundle exec jekyll build --config site/_config.yml` shows the exact error line
 3. Check that you didn't delete required lines (like `baseurl:`)
 
 ---
@@ -393,7 +395,7 @@ nav:
 2. If you want to enable it, ensure `Gemfile` has all dependencies installed:
    ```bash
    bundle install
-   bundle exec jekyll build
+   bundle exec jekyll build --config site/_config.yml
    ```
 
 ---

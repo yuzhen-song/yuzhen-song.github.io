@@ -20,14 +20,14 @@ The recommended approach is using Docker.
 
 ```bash
 # Initial setup & start dev server
-docker compose pull && docker compose up
+docker compose -f tools/compose.yml pull && docker compose -f tools/compose.yml up
 # Site runs at http://localhost:8080
 
 # Rebuild after changing dependencies or Dockerfile
-docker compose up --build
+docker compose -f tools/compose.yml up --build
 
 # Stop containers and free port 8080
-docker compose down
+docker compose -f tools/compose.yml down
 ```
 
 ### Pre-Commit Checklist
@@ -45,7 +45,7 @@ Before every commit, you **must** run these steps:
 
     ```bash
     # Rebuild the site
-    docker compose up --build
+    docker compose -f tools/compose.yml up --build
 
     # Verify by visiting http://localhost:8080.
     # Check navigation, pages, images, and dark mode.
@@ -53,7 +53,7 @@ Before every commit, you **must** run these steps:
 
 ## Critical Configuration
 
-When modifying `_config.yml`, these **must be updated together**:
+When modifying `site/_config.yml`, these **must be updated together**:
 
 - **Personal site:** `url: https://username.github.io` + `baseurl:` (empty)
 - **Project site:** `url: https://username.github.io` + `baseurl: /repo-name/`
@@ -64,13 +64,13 @@ When modifying `_config.yml`, these **must be updated together**:
 - **Git & Commits:** For commit message format and Git practices, see [.github/GIT_WORKFLOW.md](.github/GIT_WORKFLOW.md).
 - **Code-Specific Instructions:** Consult the relevant instruction file for your code type.
 
-| File Type                                     | Instruction File                                                                                |
-| --------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Markdown content (`_posts/`, `_pages/`, etc.) | [markdown-content.instructions.md](.github/instructions/markdown-content.instructions.md)       |
-| YAML config (`_config.yml`, `_data/`)         | [yaml-configuration.instructions.md](.github/instructions/yaml-configuration.instructions.md)   |
-| BibTeX (`_bibliography/`)                     | [bibtex-bibliography.instructions.md](.github/instructions/bibtex-bibliography.instructions.md) |
-| Liquid templates (`_includes/`, `_layouts/`)  | [liquid-templates.instructions.md](.github/instructions/liquid-templates.instructions.md)       |
-| JavaScript (`_scripts/`)                      | [javascript-scripts.instructions.md](.github/instructions/javascript-scripts.instructions.md)   |
+| File Type                                              | Instruction File                                                                                |
+| ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| Markdown content (`_posts/`, `site/_pages/`, etc.)     | [markdown-content.instructions.md](.github/instructions/markdown-content.instructions.md)       |
+| YAML config (`site/_config.yml`, `site/_data/`)        | [yaml-configuration.instructions.md](.github/instructions/yaml-configuration.instructions.md)   |
+| BibTeX (`site/_bibliography/`)                         | [bibtex-bibliography.instructions.md](.github/instructions/bibtex-bibliography.instructions.md) |
+| Liquid templates (`site/_includes/`, `site/_layouts/`) | [liquid-templates.instructions.md](.github/instructions/liquid-templates.instructions.md)       |
+| JavaScript (`site/_scripts/`)                          | [javascript-scripts.instructions.md](.github/instructions/javascript-scripts.instructions.md)   |
 
 ## Common Issues
 

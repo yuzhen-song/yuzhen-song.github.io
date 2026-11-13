@@ -1,5 +1,7 @@
 # Analytics Setup Guide
 
+> Website source paths in this theme reference are relative to `site/`. Run development commands from the repository root. Docker and build configuration are in `tools/`.
+
 This guide helps you add website analytics to track visitor statistics and behavior.
 
 <!--ts-->
