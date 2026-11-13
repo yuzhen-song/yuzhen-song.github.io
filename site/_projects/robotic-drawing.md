@@ -7,7 +7,12 @@ description: A complete closed-loop robotic drawing system integrating computer 
 img: assets/img/CV-Sketch.jpg
 importance: 4
 category: Course Projects
+links:
+  - name: Slides
+    url: /assets/slides/robotic-drawing.pptx
 ---
+
+<p><a href="{{ '/assets/slides/robotic-drawing.pptx' | relative_url }}" download>Download presentation (PPTX · 59 MB)</a></p>
 
 This project implements a complete closed-loop pipeline for high-precision robotic sketching. It bridges the gap between digital image processing and physical hardware execution on both planar and non-planar surfaces.
 
