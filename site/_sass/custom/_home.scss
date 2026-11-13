@@ -41,6 +41,12 @@
   object-fit: contain;
   background: transparent;
   border: 0;
+  transition: transform 0.3s ease;
+}
+
+.home-project-image:hover img,
+.home-project-image:focus-visible img {
+  transform: scale(1.02);
 }
 
 .home-project-item h3 {
