@@ -1,5 +1,6 @@
 ---
-permalink: /projects/4_project/
+permalink: /projects/ros2-mobile-manipulator/
+legacy_permalink: /projects/4_project/
 home_order: 2
 layout: page
 title: ROS2 Mobile Manipulator

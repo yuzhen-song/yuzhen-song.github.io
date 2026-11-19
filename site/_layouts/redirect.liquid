@@ -1,0 +1,18 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="refresh" content="0; url={{ page.redirect_to | relative_url }}">
+    <link rel="canonical" href="{{ page.redirect_to | absolute_url }}">
+    <title>{{ page.title | escape }}</title>
+  </head>
+  <body>
+    <p>
+      This project has moved to <a href="{{ page.redirect_to | relative_url }}">{{ page.title | escape }}</a>.
+    </p>
+  </body>
+</html>

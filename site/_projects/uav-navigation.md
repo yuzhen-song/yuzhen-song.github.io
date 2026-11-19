@@ -1,5 +1,6 @@
 ---
-permalink: /projects/1_project/
+permalink: /projects/uav-navigation/
+legacy_permalink: /projects/1_project/
 listed: false
 layout: page
 title: Autonomous UAV Mission Navigation

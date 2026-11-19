@@ -1,5 +1,6 @@
 ---
-permalink: /projects/2_project/
+permalink: /projects/slope-assistance/
+legacy_permalink: /projects/2_project/
 listed: false
 layout: page
 title: Slope CoM Assistance System

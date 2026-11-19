@@ -1,5 +1,6 @@
 ---
-permalink: /projects/8_project/
+permalink: /projects/beat/
+legacy_permalink: /projects/8_project/
 layout: page
 title: "BEAT: Posture-Independent Wrist Blood Pressure Monitor"
 description: A barometric-inertial sensing system for compensating hydrostatic errors in wrist blood pressure measurement.
@@ -26,7 +27,7 @@ The system uses a detachable sensing module. First, the module is placed at hear
 </div>
 
 <div class="beat-project-links">
-  <a class="beat-project-button" href="{{ '/assets/pdf/beat-paper.pdf' | relative_url }}?v=e04b3083e5f8" target="_blank" rel="noopener noreferrer">Paper</a>
+  <a class="beat-project-button" href="{{ '/assets/pdf/BEAT%20-%20Barometric%20Compensation%20for%20Wrist-Height%20Effects%20in%20Oscillometric%20Blood%20Pressure%20Measurement.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Paper</a>
   <a class="beat-project-button" href="https://github.com/amysong-robotics/blood-pressure-monitor" target="_blank" rel="noopener noreferrer">GitHub</a>
 </div>
 

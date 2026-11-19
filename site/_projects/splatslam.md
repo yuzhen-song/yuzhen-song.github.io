@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /projects/splatslam/
 title: "SplatSLAM"
 description: "Dense 3D Reconstruction from Monocular Video via Learning-based SLAM and Gaussian Splatting."
 img: assets/img/image.png

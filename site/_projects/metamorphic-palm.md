@@ -1,5 +1,6 @@
 ---
-permalink: /projects/3_project/
+permalink: /projects/metamorphic-palm/
+legacy_permalink: /projects/3_project/
 home_order: 1
 layout: page
 title: Underactuated Metamorphic Palm Simulation

@@ -1,5 +1,6 @@
 ---
-permalink: /projects/7_project/
+permalink: /projects/diffusion-trajectories/
+legacy_permalink: /projects/7_project/
 listed: false
 layout: page
 title: "Replicating DDAT: Diffusion Policies for Robot Trajectories"

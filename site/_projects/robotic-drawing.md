@@ -1,5 +1,6 @@
 ---
-permalink: /projects/6_project/
+permalink: /projects/robotic-drawing/
+legacy_permalink: /projects/6_project/
 home_order: 3
 layout: page
 title: 6-DOF Robotic Sketching & 3D Projection

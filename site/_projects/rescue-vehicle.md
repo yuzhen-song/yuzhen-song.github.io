@@ -1,5 +1,6 @@
 ---
-permalink: /projects/5_project/
+permalink: /projects/rescue-vehicle/
+legacy_permalink: /projects/5_project/
 layout: page
 title: Autonomous Rescue Vehicle
 description: National Second Prize winner. Features YOLOv11 object detection and FSM control.
