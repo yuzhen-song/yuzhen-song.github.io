@@ -35,37 +35,37 @@ ninja.data = [{
           title: 'BEAT: Posture-Independent Wrist Blood Pressure Monitor',
           description: "A barometric-inertial sensing system for compensating hydrostatic errors in wrist blood pressure measurement.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
+              window.location.href = "/projects/beat/";
             },},{id: "projects-replicating-ddat-diffusion-policies-for-robot-trajectories",
           title: 'Replicating DDAT: Diffusion Policies for Robot Trajectories',
           description: "An independent reproduction of DDAT in MuJoCo, evaluating the necessity of projection operators across four underactuated robotic systems.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
+              window.location.href = "/projects/diffusion-trajectories/";
             },},{id: "projects-underactuated-metamorphic-palm-simulation",
           title: 'Underactuated Metamorphic Palm Simulation',
           description: "Modeling a closed-loop, five-link palm for a three-fingered hand in Isaac Sim and Webots, with loop-closure constraints, mesh optimization, and reconfiguration stability analysis.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
+              window.location.href = "/projects/metamorphic-palm/";
             },},{id: "projects-autonomous-rescue-vehicle",
           title: 'Autonomous Rescue Vehicle',
           description: "National Second Prize winner. Features YOLOv11 object detection and FSM control.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
+              window.location.href = "/projects/rescue-vehicle/";
             },},{id: "projects-6-dof-robotic-sketching-amp-3d-projection",
           title: '6-DOF Robotic Sketching &amp;amp; 3D Projection',
           description: "A complete closed-loop robotic drawing system integrating computer vision, analytical IK, and compliant hardware design.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
+              window.location.href = "/projects/robotic-drawing/";
             },},{id: "projects-ros2-mobile-manipulator",
           title: 'ROS2 Mobile Manipulator',
           description: "A 4-DOF autonomous robot integrated with SLAM, Nav2, and Multimodal Human-Robot Interaction.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
+              window.location.href = "/projects/ros2-mobile-manipulator/";
             },},{id: "projects-slope-com-assistance-system",
           title: 'Slope CoM Assistance System',
           description: "A system for human gait assistance on slopes using STM32 and motor-driven winch.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
+              window.location.href = "/projects/slope-assistance/";
             },},{id: "projects-splatslam",
           title: 'SplatSLAM',
           description: "Dense 3D Reconstruction from Monocular Video via Learning-based SLAM and Gaussian Splatting.",
@@ -75,7 +75,7 @@ ninja.data = [{
           title: 'Autonomous UAV Mission Navigation',
           description: "via Fast-Planner Framework. Real-time trajectory generation in randomized obstacle environments.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
+              window.location.href = "/projects/uav-navigation/";
             },},{
         id: 'social-cv',
         title: 'CV',
