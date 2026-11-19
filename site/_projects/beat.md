@@ -26,7 +26,7 @@ The system uses a detachable sensing module. First, the module is placed at hear
 </div>
 
 <div class="beat-project-links">
-  <a class="beat-project-button" href="{{ '/assets/pdf/beat-paper.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Paper</a>
+  <a class="beat-project-button" href="{{ '/assets/pdf/beat-paper.pdf' | relative_url }}?v=e04b3083e5f8" target="_blank" rel="noopener noreferrer">Paper</a>
   <a class="beat-project-button" href="https://github.com/amysong-robotics/blood-pressure-monitor" target="_blank" rel="noopener noreferrer">GitHub</a>
 </div>
 
