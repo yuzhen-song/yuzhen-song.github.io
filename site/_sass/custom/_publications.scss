@@ -65,6 +65,12 @@
   font-size: 1rem;
 }
 
+.academic-authors strong {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
 .academic-status {
   color: #333;
 }
